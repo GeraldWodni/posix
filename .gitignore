@@ -1,10 +1,6 @@
-# output (for now)
-dist
-
 # vim swap files
 *.swp
 
 # swig products
 *.c
 *.fsc
-*.fs
