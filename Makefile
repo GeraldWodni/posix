@@ -41,7 +41,11 @@ all: $(FS_FILES)
 # Execute and save output
 %.fs: %.fsx
 	mkdir -p dist/gforth
+	mkdir -p dist/vfx
+	mkdir -p dist/swiftforth
 	./$< -gforth > dist/gforth/$@
+	./$< -vfx > dist/vfx/$@
+	./$< -swiftforth > dist/swiftforth/$@
 
 # Clean & Debug
 .PHONY: makefile-debug
