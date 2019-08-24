@@ -3,6 +3,9 @@
 %typemap(forth) size_t "u"
 %typemap(forth) __ssize_t "n"
 
+/* enable ISOC99 to use the correct structure i.e. in locale.h struct lconv */
+#define __USE_ISOC99
+
 /* The following declarations fix gcc-isms which cannot be parsed by SWIG otherwise */
 
 #define __BEGIN_DECLS
@@ -10,9 +13,11 @@
 #define __THROW
 #define __THROWNL
 #define __attribute__(X)
+#define __attribute_const__
 #define __attribute_malloc__
 #define __attribute_pure__
 #define __attribute_warn_unused_result__
+#define __extension__
 #define __nonnull(X)
 #define __noreturn__
 #define __restrict
