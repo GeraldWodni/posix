@@ -5,6 +5,6 @@
 #include <stdio.h>
 %}
 
-%include "../fixgcc.i"
+%include "fixgcc.ih"
 
 %include <stdio.h>

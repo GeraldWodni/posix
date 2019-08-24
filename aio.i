@@ -5,6 +5,6 @@
 #include <aio.h>
 %}
 
-%include "../fixgcc.i"
+%include "fixgcc.ih"
 
 %include <aio.h>

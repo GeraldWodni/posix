@@ -6,6 +6,6 @@
 #include <stdlib.h>
 %}
 
-%include "../fixgcc.i"
+%include "fixgcc.ih"
 
 %include <stdlib.h>

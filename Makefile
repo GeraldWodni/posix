@@ -15,7 +15,7 @@ OPTIONS    = -forth -stackcomments -use-structs -I/usr/include
 
 # Subdirs to search for additional source files
 SUBDIRS := $(shell ls -F | grep "\/" )
-DIRS := $(SUBDIRS)
+DIRS := ./ $(SUBDIRS)
 INTERFACE_FILES := $(foreach d, $(DIRS), $(wildcard $(d)*.i) )
 
 # Create an FS-Executable file of every i file
@@ -40,7 +40,8 @@ all: $(FS_FILES)
 
 # Execute and save output
 %.fs: %.fsx
-	$< -gforth > $@
+	mkdir -p dist/gforth
+	./$< -gforth > dist/gforth/$@
 
 # Clean & Debug
 .PHONY: makefile-debug
