@@ -1,0 +1,8 @@
+
+# vim swap files
+*.swp
+
+# swig products
+*.c
+*.fsc
+*.fs
