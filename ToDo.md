@@ -25,8 +25,8 @@ Files Todo:
 [ ]iso646.h
 [x]langinfo.h
 [x]libgen.h
-[ ]limits.h
-[ ]locale.h
+[x]limits.h
+[x]locale.h
 [ ]math.h
 [ ]monetary.h
 [ ]mqueue.h

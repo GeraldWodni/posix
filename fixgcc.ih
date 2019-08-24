@@ -4,7 +4,9 @@
 %typemap(forth) __ssize_t "n"
 
 /* enable ISOC99 to use the correct structure i.e. in locale.h struct lconv */
+#ifndef SWIG_DISABLE_ISOC99
 #define __USE_ISOC99
+#endif
 
 /* The following declarations fix gcc-isms which cannot be parsed by SWIG otherwise */
 
