@@ -15,9 +15,14 @@
 
 \ ------===< functions >===-------
 EXTERN: "C" void * opendir( char * __name );	( __name -- )
+EXTERN: "C" void * fdopendir( int __fd );	( __fd -- )
 EXTERN: "C" int closedir( void * __dirp );	( __dirp -- )
 EXTERN: "C" void * readdir( void * __dirp );	( __dirp -- )
+EXTERN: "C" int readdir_r( void * __dirp, void * __entry, void * __result );	( __dirp __entry __result -- )
 EXTERN: "C" void rewinddir( void * __dirp );	( __dirp -- )
+EXTERN: "C" int dirfd( void * __dirp );	( __dirp -- )
+EXTERN: "C" int scandir( char * __dir, void * __namelist, void * __selector, void * __cmp );	( __dir __namelist __selector __cmp -- )
+EXTERN: "C" int alphasort( void * __e1, void * __e2 );	( __e1 __e2 -- )
 
 \ ----===< postfix >===-----
 ( none )

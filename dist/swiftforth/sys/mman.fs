@@ -24,6 +24,11 @@
 #1	constant MS_ASYNC
 #4	constant MS_SYNC
 #2	constant MS_INVALIDATE
+#0	constant POSIX_MADV_NORMAL
+#1	constant POSIX_MADV_RANDOM
+#2	constant POSIX_MADV_SEQUENTIAL
+#3	constant POSIX_MADV_WILLNEED
+#4	constant POSIX_MADV_DONTNEED
 #1	constant MCL_CURRENT
 #2	constant MCL_FUTURE
 #4	constant MCL_ONFAULT
@@ -33,6 +38,7 @@ FUNCTION: mmap ( __addr __len __prot __flags __fd __offset -- a )	( __addr __len
 FUNCTION: munmap ( __addr __len -- n )	( __addr __len -- )
 FUNCTION: mprotect ( __addr __len __prot -- n )	( __addr __len __prot -- )
 FUNCTION: msync ( __addr __len __flags -- n )	( __addr __len __flags -- )
+FUNCTION: posix_madvise ( __addr __len __advice -- n )	( __addr __len __advice -- )
 FUNCTION: mlock ( __addr __len -- n )	( __addr __len -- )
 FUNCTION: munlock ( __addr __len -- n )	( __addr __len -- )
 FUNCTION: mlockall ( __flags -- n )	( __flags -- )

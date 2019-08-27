@@ -30,6 +30,8 @@ drop 48 end-structure
 \ ------===< functions >===-------
 c-function getpwuid getpwuid n -- a	( __uid -- )
 c-function getpwnam getpwnam s -- a	( __name -- )
+c-function getpwuid_r getpwuid_r n a a u a -- n	( __uid __resultbuf __buffer __buflen __result -- )
+c-function getpwnam_r getpwnam_r s a a u a -- n	( __name __resultbuf __buffer __buflen __result -- )
 
 \ ----===< postfix >===-----
 end-c-library

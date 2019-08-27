@@ -142,8 +142,8 @@ EXTERN: "C" int brk( void * __addr );	( __addr -- )
 EXTERN: "C" void * sbrk( n __delta );	( __delta -- )
 EXTERN: "C" long syscall( long __sysno, ...  );	( __sysno <noname> -- )
 EXTERN: "C" int lockf( int __fd, int __cmd, n __len );	( __fd __cmd __len -- )
+EXTERN: "C" int fdatasync( int __fildes );	( __fildes -- )
 EXTERN: "C" void * crypt( char * __key, char * __salt );	( __key __salt -- )
-EXTERN: "C" void swab( void * __from, void * __to, n __n );	( __from __to __n -- )
 EXTERN: "C" int getentropy( void * __buffer, n __length );	( __buffer __length -- )
 
 \ ----===< postfix >===-----

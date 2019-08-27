@@ -22,6 +22,8 @@ EXTERN: "C" int mq_unlink( char * __name );	( __name -- )
 EXTERN: "C" int mq_notify( n __mqdes, void * __notification );	( __mqdes __notification -- )
 EXTERN: "C" n mq_receive( n __mqdes, void * __msg_ptr, n __msg_len, void * __msg_prio );	( __mqdes __msg_ptr __msg_len __msg_prio -- )
 EXTERN: "C" int mq_send( n __mqdes, char * __msg_ptr, n __msg_len, int __msg_prio );	( __mqdes __msg_ptr __msg_len __msg_prio -- )
+EXTERN: "C" n mq_timedreceive( n __mqdes, void * __msg_ptr, n __msg_len, void * __msg_prio, void * __abs_timeout );	( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- )
+EXTERN: "C" int mq_timedsend( n __mqdes, char * __msg_ptr, n __msg_len, int __msg_prio, void * __abs_timeout );	( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- )
 
 \ ----===< postfix >===-----
 ( none )

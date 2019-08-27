@@ -50,10 +50,13 @@
 \ ------===< functions >===-------
 FUNCTION: stat ( __file __buf -- n )	( __file __buf -- )
 FUNCTION: fstat ( __fd __buf -- n )	( __fd __buf -- )
+FUNCTION: lstat ( __file __buf -- n )	( __file __buf -- )
 FUNCTION: chmod ( __file __mode -- n )	( __file __mode -- )
+FUNCTION: fchmod ( __fd __mode -- n )	( __fd __mode -- )
 FUNCTION: umask ( __mask -- n )	( __mask -- )
 FUNCTION: mkdir ( __path __mode -- n )	( __path __mode -- )
 FUNCTION: mkfifo ( __path __mode -- n )	( __path __mode -- )
+FUNCTION: futimens ( __fd __times -- n )	( __fd __times -- )
 FUNCTION: __fxstat ( __ver __fildes __stat_buf -- n )	( __ver __fildes __stat_buf -- )
 FUNCTION: __xstat ( __ver __filename __stat_buf -- n )	( __ver __filename __stat_buf -- )
 FUNCTION: __lxstat ( __ver __filename __stat_buf -- n )	( __ver __filename __stat_buf -- )

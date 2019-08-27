@@ -13,6 +13,7 @@
 \ ----===< int constants >===-----
 #1	constant _PTHREAD_H
 #0	constant PTHREAD_ONCE_INIT
+#-1	constant PTHREAD_BARRIER_SERIAL_THREAD
 
 \ --------===< enums >===---------
 #0	constant PTHREAD_CREATE_JOINABLE
@@ -21,6 +22,18 @@
 #1	constant PTHREAD_MUTEX_RECURSIVE_NP
 #2	constant PTHREAD_MUTEX_ERRORCHECK_NP
 #3	constant PTHREAD_MUTEX_ADAPTIVE_NP
+#0	constant PTHREAD_MUTEX_NORMAL
+#1	constant PTHREAD_MUTEX_RECURSIVE
+#2	constant PTHREAD_MUTEX_ERRORCHECK
+#0	constant PTHREAD_MUTEX_DEFAULT
+#0	constant PTHREAD_MUTEX_STALLED
+#0	constant PTHREAD_MUTEX_STALLED_NP
+#1	constant PTHREAD_MUTEX_ROBUST
+#1	constant PTHREAD_MUTEX_ROBUST_NP
+#0	constant PTHREAD_RWLOCK_PREFER_READER_NP
+#1	constant PTHREAD_RWLOCK_PREFER_WRITER_NP
+#2	constant PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP
+#0	constant PTHREAD_RWLOCK_DEFAULT_NP
 #0	constant PTHREAD_INHERIT_SCHED
 #1	constant PTHREAD_EXPLICIT_SCHED
 #0	constant PTHREAD_SCOPE_SYSTEM
@@ -87,6 +100,8 @@ FUNCTION: pthread_attr_getstackaddr ( __attr __stackaddr -- n )	( __attr __stack
 FUNCTION: pthread_attr_setstackaddr ( __attr __stackaddr -- n )	( __attr __stackaddr -- )
 FUNCTION: pthread_attr_getstacksize ( __attr __stacksize -- n )	( __attr __stacksize -- )
 FUNCTION: pthread_attr_setstacksize ( __attr __stacksize -- n )	( __attr __stacksize -- )
+FUNCTION: pthread_attr_getstack ( __attr __stackaddr __stacksize -- n )	( __attr __stackaddr __stacksize -- )
+FUNCTION: pthread_attr_setstack ( __attr __stackaddr __stacksize -- n )	( __attr __stackaddr __stacksize -- )
 FUNCTION: pthread_setschedparam ( __target_thread __policy __param -- n )	( __target_thread __policy __param -- )
 FUNCTION: pthread_getschedparam ( __target_thread __policy __param -- n )	( __target_thread __policy __param -- )
 FUNCTION: pthread_setschedprio ( __target_thread __prio -- n )	( __target_thread __prio -- )
@@ -103,17 +118,38 @@ FUNCTION: pthread_mutex_init ( __mutex __mutexattr -- n )	( __mutex __mutexattr 
 FUNCTION: pthread_mutex_destroy ( __mutex -- n )	( __mutex -- )
 FUNCTION: pthread_mutex_trylock ( __mutex -- n )	( __mutex -- )
 FUNCTION: pthread_mutex_lock ( __mutex -- n )	( __mutex -- )
+FUNCTION: pthread_mutex_timedlock ( __mutex __abstime -- n )	( __mutex __abstime -- )
 FUNCTION: pthread_mutex_unlock ( __mutex -- n )	( __mutex -- )
 FUNCTION: pthread_mutex_getprioceiling ( __mutex __prioceiling -- n )	( __mutex __prioceiling -- )
 FUNCTION: pthread_mutex_setprioceiling ( __mutex __prioceiling __old_ceiling -- n )	( __mutex __prioceiling __old_ceiling -- )
+FUNCTION: pthread_mutex_consistent ( __mutex -- n )	( __mutex -- )
 FUNCTION: pthread_mutexattr_init ( __attr -- n )	( __attr -- )
 FUNCTION: pthread_mutexattr_destroy ( __attr -- n )	( __attr -- )
 FUNCTION: pthread_mutexattr_getpshared ( __attr __pshared -- n )	( __attr __pshared -- )
 FUNCTION: pthread_mutexattr_setpshared ( __attr __pshared -- n )	( __attr __pshared -- )
+FUNCTION: pthread_mutexattr_gettype ( __attr __kind -- n )	( __attr __kind -- )
+FUNCTION: pthread_mutexattr_settype ( __attr __kind -- n )	( __attr __kind -- )
 FUNCTION: pthread_mutexattr_getprotocol ( __attr __protocol -- n )	( __attr __protocol -- )
 FUNCTION: pthread_mutexattr_setprotocol ( __attr __protocol -- n )	( __attr __protocol -- )
 FUNCTION: pthread_mutexattr_getprioceiling ( __attr __prioceiling -- n )	( __attr __prioceiling -- )
 FUNCTION: pthread_mutexattr_setprioceiling ( __attr __prioceiling -- n )	( __attr __prioceiling -- )
+FUNCTION: pthread_mutexattr_getrobust ( __attr __robustness -- n )	( __attr __robustness -- )
+FUNCTION: pthread_mutexattr_setrobust ( __attr __robustness -- n )	( __attr __robustness -- )
+FUNCTION: pthread_rwlock_init ( __rwlock __attr -- n )	( __rwlock __attr -- )
+FUNCTION: pthread_rwlock_destroy ( __rwlock -- n )	( __rwlock -- )
+FUNCTION: pthread_rwlock_rdlock ( __rwlock -- n )	( __rwlock -- )
+FUNCTION: pthread_rwlock_tryrdlock ( __rwlock -- n )	( __rwlock -- )
+FUNCTION: pthread_rwlock_timedrdlock ( __rwlock __abstime -- n )	( __rwlock __abstime -- )
+FUNCTION: pthread_rwlock_wrlock ( __rwlock -- n )	( __rwlock -- )
+FUNCTION: pthread_rwlock_trywrlock ( __rwlock -- n )	( __rwlock -- )
+FUNCTION: pthread_rwlock_timedwrlock ( __rwlock __abstime -- n )	( __rwlock __abstime -- )
+FUNCTION: pthread_rwlock_unlock ( __rwlock -- n )	( __rwlock -- )
+FUNCTION: pthread_rwlockattr_init ( __attr -- n )	( __attr -- )
+FUNCTION: pthread_rwlockattr_destroy ( __attr -- n )	( __attr -- )
+FUNCTION: pthread_rwlockattr_getpshared ( __attr __pshared -- n )	( __attr __pshared -- )
+FUNCTION: pthread_rwlockattr_setpshared ( __attr __pshared -- n )	( __attr __pshared -- )
+FUNCTION: pthread_rwlockattr_getkind_np ( __attr __pref -- n )	( __attr __pref -- )
+FUNCTION: pthread_rwlockattr_setkind_np ( __attr __pref -- n )	( __attr __pref -- )
 FUNCTION: pthread_cond_init ( __cond __cond_attr -- n )	( __cond __cond_attr -- )
 FUNCTION: pthread_cond_destroy ( __cond -- n )	( __cond -- )
 FUNCTION: pthread_cond_signal ( __cond -- n )	( __cond -- )
@@ -124,10 +160,25 @@ FUNCTION: pthread_condattr_init ( __attr -- n )	( __attr -- )
 FUNCTION: pthread_condattr_destroy ( __attr -- n )	( __attr -- )
 FUNCTION: pthread_condattr_getpshared ( __attr __pshared -- n )	( __attr __pshared -- )
 FUNCTION: pthread_condattr_setpshared ( __attr __pshared -- n )	( __attr __pshared -- )
+FUNCTION: pthread_condattr_getclock ( __attr __clock_id -- n )	( __attr __clock_id -- )
+FUNCTION: pthread_condattr_setclock ( __attr __clock_id -- n )	( __attr __clock_id -- )
+FUNCTION: pthread_spin_init ( __lock __pshared -- n )	( __lock __pshared -- )
+FUNCTION: pthread_spin_destroy ( __lock -- n )	( __lock -- )
+FUNCTION: pthread_spin_lock ( __lock -- n )	( __lock -- )
+FUNCTION: pthread_spin_trylock ( __lock -- n )	( __lock -- )
+FUNCTION: pthread_spin_unlock ( __lock -- n )	( __lock -- )
+FUNCTION: pthread_barrier_init ( __barrier __attr __count -- n )	( __barrier __attr __count -- )
+FUNCTION: pthread_barrier_destroy ( __barrier -- n )	( __barrier -- )
+FUNCTION: pthread_barrier_wait ( __barrier -- n )	( __barrier -- )
+FUNCTION: pthread_barrierattr_init ( __attr -- n )	( __attr -- )
+FUNCTION: pthread_barrierattr_destroy ( __attr -- n )	( __attr -- )
+FUNCTION: pthread_barrierattr_getpshared ( __attr __pshared -- n )	( __attr __pshared -- )
+FUNCTION: pthread_barrierattr_setpshared ( __attr __pshared -- n )	( __attr __pshared -- )
 FUNCTION: pthread_key_create ( __key __destr_function -- n )	( __key __destr_function -- )
 FUNCTION: pthread_key_delete ( __key -- n )	( __key -- )
 FUNCTION: pthread_getspecific ( __key -- a )	( __key -- )
 FUNCTION: pthread_setspecific ( __key __pointer -- n )	( __key __pointer -- )
+FUNCTION: pthread_getcpuclockid ( __thread_id __clock_id -- n )	( __thread_id __clock_id -- )
 FUNCTION: pthread_atfork ( __prepare __parent __child -- n )	( __prepare __parent __child -- )
 
 \ ----===< postfix >===-----

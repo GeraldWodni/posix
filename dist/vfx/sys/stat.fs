@@ -50,10 +50,13 @@
 \ ------===< functions >===-------
 EXTERN: "C" int stat( char * __file, void * __buf );	( __file __buf -- )
 EXTERN: "C" int fstat( int __fd, void * __buf );	( __fd __buf -- )
+EXTERN: "C" int lstat( char * __file, void * __buf );	( __file __buf -- )
 EXTERN: "C" int chmod( char * __file, n __mode );	( __file __mode -- )
+EXTERN: "C" int fchmod( int __fd, n __mode );	( __fd __mode -- )
 EXTERN: "C" n umask( n __mask );	( __mask -- )
 EXTERN: "C" int mkdir( char * __path, n __mode );	( __path __mode -- )
 EXTERN: "C" int mkfifo( char * __path, n __mode );	( __path __mode -- )
+EXTERN: "C" int futimens( int __fd, void * __times );	( __fd __times -- )
 EXTERN: "C" int __fxstat( int __ver, int __fildes, void * __stat_buf );	( __ver __fildes __stat_buf -- )
 EXTERN: "C" int __xstat( int __ver, char * __filename, void * __stat_buf );	( __ver __filename __stat_buf -- )
 EXTERN: "C" int __lxstat( int __ver, char * __filename, void * __stat_buf );	( __ver __filename __stat_buf -- )

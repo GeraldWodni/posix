@@ -26,6 +26,7 @@ EXTERN: "C" int setjmp( void * __env );	( __env -- )
 EXTERN: "C" int __sigsetjmp( void * __env, int __savemask );	( __env __savemask -- )
 EXTERN: "C" int _setjmp( void * __env );	( __env -- )
 EXTERN: "C" void longjmp( void * __env, int __val );	( __env __val -- )
+EXTERN: "C" void siglongjmp( void * __env, int __val );	( __env __val -- )
 
 \ ----===< postfix >===-----
 ( none )

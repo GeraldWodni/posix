@@ -27,6 +27,8 @@ drop 32 end-structure
 \ ------===< functions >===-------
 c-function getgrgid getgrgid n -- a	( __gid -- )
 c-function getgrnam getgrnam s -- a	( __name -- )
+c-function getgrgid_r getgrgid_r n a a u a -- n	( __gid __resultbuf __buffer __buflen __result -- )
+c-function getgrnam_r getgrnam_r s a a u a -- n	( __name __resultbuf __buffer __buflen __result -- )
 
 \ ----===< postfix >===-----
 end-c-library

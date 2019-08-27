@@ -47,6 +47,10 @@ drop 96 end-structure
 \ ------===< functions >===-------
 c-function setlocale setlocale n s -- a	( __category __locale -- )
 c-function localeconv localeconv  -- a	( -- )
+c-function newlocale newlocale n s n -- n	( __category_mask __locale __base -- )
+c-function duplocale duplocale n -- n	( __dataset -- )
+c-function freelocale freelocale n -- void	( __dataset -- )
+c-function uselocale uselocale n -- n	( __dataset -- )
 
 \ ----===< postfix >===-----
 end-c-library

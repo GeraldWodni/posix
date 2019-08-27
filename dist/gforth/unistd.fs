@@ -144,8 +144,8 @@ c-function brk brk a -- n	( __addr -- )
 c-function sbrk sbrk n -- a	( __delta -- )
 c-function syscall syscall n ... -- n	( __sysno <noname> -- )
 c-function lockf lockf n n n -- n	( __fd __cmd __len -- )
+c-function fdatasync fdatasync n -- n	( __fildes -- )
 c-function crypt crypt s s -- a	( __key __salt -- )
-c-function swab swab a a n -- void	( __from __to __n -- )
 c-function getentropy getentropy a u -- n	( __buffer __length -- )
 
 \ ----===< postfix >===-----

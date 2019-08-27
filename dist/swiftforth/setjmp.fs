@@ -26,6 +26,7 @@ FUNCTION: setjmp ( __env -- n )	( __env -- )
 FUNCTION: __sigsetjmp ( __env __savemask -- n )	( __env __savemask -- )
 FUNCTION: _setjmp ( __env -- n )	( __env -- )
 FUNCTION: longjmp ( __env __val -- void )	( __env __val -- )
+FUNCTION: siglongjmp ( __env __val -- void )	( __env __val -- )
 
 \ ----===< postfix >===-----
 ( none )

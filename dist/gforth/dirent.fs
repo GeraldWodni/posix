@@ -17,9 +17,14 @@ s" dirent" add-lib
 
 \ ------===< functions >===-------
 c-function opendir opendir s -- a	( __name -- )
+c-function fdopendir fdopendir n -- a	( __fd -- )
 c-function closedir closedir a -- n	( __dirp -- )
 c-function readdir readdir a -- a	( __dirp -- )
+c-function readdir_r readdir_r a a a -- n	( __dirp __entry __result -- )
 c-function rewinddir rewinddir a -- void	( __dirp -- )
+c-function dirfd dirfd a -- n	( __dirp -- )
+c-function scandir scandir s a a a -- n	( __dir __namelist __selector __cmp -- )
+c-function alphasort alphasort a a -- n	( __e1 __e2 -- )
 
 \ ----===< postfix >===-----
 end-c-library

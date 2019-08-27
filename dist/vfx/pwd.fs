@@ -28,6 +28,8 @@ drop 48 end-structure
 \ ------===< functions >===-------
 EXTERN: "C" void * getpwuid( n __uid );	( __uid -- )
 EXTERN: "C" void * getpwnam( char * __name );	( __name -- )
+EXTERN: "C" int getpwuid_r( n __uid, void * __resultbuf, void * __buffer, n __buflen, void * __result );	( __uid __resultbuf __buffer __buflen __result -- )
+EXTERN: "C" int getpwnam_r( char * __name, void * __resultbuf, void * __buffer, n __buflen, void * __result );	( __name __resultbuf __buffer __buflen __result -- )
 
 \ ----===< postfix >===-----
 ( none )

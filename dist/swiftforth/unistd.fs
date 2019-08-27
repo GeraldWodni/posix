@@ -142,8 +142,8 @@ FUNCTION: brk ( __addr -- n )	( __addr -- )
 FUNCTION: sbrk ( __delta -- a )	( __delta -- )
 FUNCTION: syscall ( __sysno  -- n )	( __sysno <noname> -- )
 FUNCTION: lockf ( __fd __cmd __len -- n )	( __fd __cmd __len -- )
+FUNCTION: fdatasync ( __fildes -- n )	( __fildes -- )
 FUNCTION: crypt ( __key __salt -- a )	( __key __salt -- )
-FUNCTION: swab ( __from __to __n -- void )	( __from __to __n -- )
 FUNCTION: getentropy ( __buffer __length -- n )	( __buffer __length -- )
 
 \ ----===< postfix >===-----

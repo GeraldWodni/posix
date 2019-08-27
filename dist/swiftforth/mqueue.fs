@@ -22,6 +22,8 @@ FUNCTION: mq_unlink ( __name -- n )	( __name -- )
 FUNCTION: mq_notify ( __mqdes __notification -- n )	( __mqdes __notification -- )
 FUNCTION: mq_receive ( __mqdes __msg_ptr __msg_len __msg_prio -- n )	( __mqdes __msg_ptr __msg_len __msg_prio -- )
 FUNCTION: mq_send ( __mqdes __msg_ptr __msg_len __msg_prio -- n )	( __mqdes __msg_ptr __msg_len __msg_prio -- )
+FUNCTION: mq_timedreceive ( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- n )	( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- )
+FUNCTION: mq_timedsend ( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- n )	( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- )
 
 \ ----===< postfix >===-----
 ( none )

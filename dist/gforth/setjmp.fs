@@ -28,6 +28,7 @@ c-function setjmp setjmp a -- n	( __env -- )
 c-function __sigsetjmp __sigsetjmp a n -- n	( __env __savemask -- )
 c-function _setjmp _setjmp a -- n	( __env -- )
 c-function longjmp longjmp a n -- void	( __env __val -- )
+c-function siglongjmp siglongjmp a n -- void	( __env __val -- )
 
 \ ----===< postfix >===-----
 end-c-library

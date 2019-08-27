@@ -16,14 +16,11 @@ s" strings" add-lib
 #1	constant _STRINGS_H
 
 \ ------===< functions >===-------
-c-function bcmp bcmp a a u -- n	( __s1 __s2 __n -- )
-c-function bcopy bcopy a a u -- void	( __src __dest __n -- )
-c-function bzero bzero a u -- void	( __s __n -- )
-c-function index index s n -- a	( __s __c -- )
-c-function rindex rindex s n -- a	( __s __c -- )
 c-function ffs ffs n -- n	( __i -- )
 c-function strcasecmp strcasecmp s s -- n	( __s1 __s2 -- )
 c-function strncasecmp strncasecmp s s u -- n	( __s1 __s2 __n -- )
+c-function strcasecmp_l strcasecmp_l s s n -- n	( __s1 __s2 __loc -- )
+c-function strncasecmp_l strncasecmp_l s s u n -- n	( __s1 __s2 __n __loc -- )
 
 \ ----===< postfix >===-----
 end-c-library

@@ -159,6 +159,7 @@ EXTERN: "C" int tcsendbreak( int __fd, int __duration );	( __fd __duration -- )
 EXTERN: "C" int tcdrain( int __fd );	( __fd -- )
 EXTERN: "C" int tcflush( int __fd, int __queue_selector );	( __fd __queue_selector -- )
 EXTERN: "C" int tcflow( int __fd, int __action );	( __fd __action -- )
+EXTERN: "C" n tcgetsid( int __fd );	( __fd -- )
 
 \ ----===< postfix >===-----
 ( none )

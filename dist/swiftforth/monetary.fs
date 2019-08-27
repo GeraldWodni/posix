@@ -15,6 +15,7 @@
 
 \ ------===< functions >===-------
 FUNCTION: strfmon ( __s __maxsize __format  -- n )	( __s __maxsize __format <noname> -- )
+FUNCTION: strfmon_l ( __s __maxsize __loc __format  -- n )	( __s __maxsize __loc __format <noname> -- )
 
 \ ----===< postfix >===-----
 ( none )

@@ -24,6 +24,11 @@
 #1	constant MS_ASYNC
 #4	constant MS_SYNC
 #2	constant MS_INVALIDATE
+#0	constant POSIX_MADV_NORMAL
+#1	constant POSIX_MADV_RANDOM
+#2	constant POSIX_MADV_SEQUENTIAL
+#3	constant POSIX_MADV_WILLNEED
+#4	constant POSIX_MADV_DONTNEED
 #1	constant MCL_CURRENT
 #2	constant MCL_FUTURE
 #4	constant MCL_ONFAULT
@@ -33,6 +38,7 @@ EXTERN: "C" void * mmap( void * __addr, n __len, int __prot, int __flags, int __
 EXTERN: "C" int munmap( void * __addr, n __len );	( __addr __len -- )
 EXTERN: "C" int mprotect( void * __addr, n __len, int __prot );	( __addr __len __prot -- )
 EXTERN: "C" int msync( void * __addr, n __len, int __flags );	( __addr __len __flags -- )
+EXTERN: "C" int posix_madvise( void * __addr, n __len, int __advice );	( __addr __len __advice -- )
 EXTERN: "C" int mlock( void * __addr, n __len );	( __addr __len -- )
 EXTERN: "C" int munlock( void * __addr, n __len );	( __addr __len -- )
 EXTERN: "C" int mlockall( int __flags );	( __flags -- )

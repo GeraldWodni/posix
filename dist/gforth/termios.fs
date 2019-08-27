@@ -161,6 +161,7 @@ c-function tcsendbreak tcsendbreak n n -- n	( __fd __duration -- )
 c-function tcdrain tcdrain n -- n	( __fd -- )
 c-function tcflush tcflush n n -- n	( __fd __queue_selector -- )
 c-function tcflow tcflow n n -- n	( __fd __action -- )
+c-function tcgetsid tcgetsid n -- n	( __fd -- )
 
 \ ----===< postfix >===-----
 end-c-library

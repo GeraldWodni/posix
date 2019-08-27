@@ -33,7 +33,6 @@
 FUNCTION: wait ( __stat_loc -- n )	( __stat_loc -- )
 FUNCTION: waitpid ( __pid __stat_loc __options -- n )	( __pid __stat_loc __options -- )
 FUNCTION: waitid ( __idtype __id __infop __options -- n )	( __idtype __id __infop __options -- )
-FUNCTION: wait3 ( __stat_loc __options __usage -- n )	( __stat_loc __options __usage -- )
 
 \ ----===< postfix >===-----
 ( none )

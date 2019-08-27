@@ -400,6 +400,7 @@
 
 \ ------===< functions >===-------
 FUNCTION: nl_langinfo ( __item -- a )	( __item -- )
+FUNCTION: nl_langinfo_l ( __item __l -- a )	( __item __l -- )
 
 \ ----===< postfix >===-----
 ( none )

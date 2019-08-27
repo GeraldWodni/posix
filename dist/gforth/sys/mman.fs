@@ -26,6 +26,11 @@ s" sys_mman" add-lib
 #1	constant MS_ASYNC
 #4	constant MS_SYNC
 #2	constant MS_INVALIDATE
+#0	constant POSIX_MADV_NORMAL
+#1	constant POSIX_MADV_RANDOM
+#2	constant POSIX_MADV_SEQUENTIAL
+#3	constant POSIX_MADV_WILLNEED
+#4	constant POSIX_MADV_DONTNEED
 #1	constant MCL_CURRENT
 #2	constant MCL_FUTURE
 #4	constant MCL_ONFAULT
@@ -35,6 +40,7 @@ c-function mmap mmap a u n n n n -- a	( __addr __len __prot __flags __fd __offse
 c-function munmap munmap a u -- n	( __addr __len -- )
 c-function mprotect mprotect a u n -- n	( __addr __len __prot -- )
 c-function msync msync a u n -- n	( __addr __len __flags -- )
+c-function posix_madvise posix_madvise a u n -- n	( __addr __len __advice -- )
 c-function mlock mlock a u -- n	( __addr __len -- )
 c-function munlock munlock a u -- n	( __addr __len -- )
 c-function mlockall mlockall n -- n	( __flags -- )

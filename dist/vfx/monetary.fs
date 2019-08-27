@@ -15,6 +15,7 @@
 
 \ ------===< functions >===-------
 EXTERN: "C" n strfmon( void * __s, n __maxsize, char * __format, ...  );	( __s __maxsize __format <noname> -- )
+EXTERN: "C" n strfmon_l( void * __s, n __maxsize, n __loc, char * __format, ...  );	( __s __maxsize __loc __format <noname> -- )
 
 \ ----===< postfix >===-----
 ( none )

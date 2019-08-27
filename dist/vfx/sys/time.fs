@@ -30,7 +30,6 @@ EXTERN: "C" int gettimeofday( void * __tv, void * __tz );	( __tv __tz -- )
 EXTERN: "C" int getitimer( int __which, void * __value );	( __which __value -- )
 EXTERN: "C" int setitimer( int __which, void * __new, void * __old );	( __which __new __old -- )
 EXTERN: "C" int utimes( char * __file, void * __tvp );	( __file __tvp -- )
-EXTERN: "C" long __sysconf( int  );	( <noname> -- )
 
 \ ----===< postfix >===-----
 ( none )

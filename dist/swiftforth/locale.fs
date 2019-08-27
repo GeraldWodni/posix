@@ -45,6 +45,10 @@ drop 96 end-structure
 \ ------===< functions >===-------
 FUNCTION: setlocale ( __category __locale -- a )	( __category __locale -- )
 FUNCTION: localeconv (  -- a )	( -- )
+FUNCTION: newlocale ( __category_mask __locale __base -- n )	( __category_mask __locale __base -- )
+FUNCTION: duplocale ( __dataset -- n )	( __dataset -- )
+FUNCTION: freelocale ( __dataset -- void )	( __dataset -- )
+FUNCTION: uselocale ( __dataset -- n )	( __dataset -- )
 
 \ ----===< postfix >===-----
 ( none )

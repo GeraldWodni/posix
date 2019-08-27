@@ -1,9 +1,7 @@
 %module unistd
 
+/* add legacy functions */
 #define __USE_MISC
-#define __USE_XOPEN
-#define __USE_XOPEN2K
-#define __USE_XOPEN2K8
 
 %insert("include")
 %{

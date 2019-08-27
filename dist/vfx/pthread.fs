@@ -13,6 +13,7 @@
 \ ----===< int constants >===-----
 #1	constant _PTHREAD_H
 #0	constant PTHREAD_ONCE_INIT
+#-1	constant PTHREAD_BARRIER_SERIAL_THREAD
 
 \ --------===< enums >===---------
 #0	constant PTHREAD_CREATE_JOINABLE
@@ -21,6 +22,18 @@
 #1	constant PTHREAD_MUTEX_RECURSIVE_NP
 #2	constant PTHREAD_MUTEX_ERRORCHECK_NP
 #3	constant PTHREAD_MUTEX_ADAPTIVE_NP
+#0	constant PTHREAD_MUTEX_NORMAL
+#1	constant PTHREAD_MUTEX_RECURSIVE
+#2	constant PTHREAD_MUTEX_ERRORCHECK
+#0	constant PTHREAD_MUTEX_DEFAULT
+#0	constant PTHREAD_MUTEX_STALLED
+#0	constant PTHREAD_MUTEX_STALLED_NP
+#1	constant PTHREAD_MUTEX_ROBUST
+#1	constant PTHREAD_MUTEX_ROBUST_NP
+#0	constant PTHREAD_RWLOCK_PREFER_READER_NP
+#1	constant PTHREAD_RWLOCK_PREFER_WRITER_NP
+#2	constant PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP
+#0	constant PTHREAD_RWLOCK_DEFAULT_NP
 #0	constant PTHREAD_INHERIT_SCHED
 #1	constant PTHREAD_EXPLICIT_SCHED
 #0	constant PTHREAD_SCOPE_SYSTEM
@@ -87,6 +100,8 @@ EXTERN: "C" int pthread_attr_getstackaddr( void * __attr, void * __stackaddr );	
 EXTERN: "C" int pthread_attr_setstackaddr( void * __attr, void * __stackaddr );	( __attr __stackaddr -- )
 EXTERN: "C" int pthread_attr_getstacksize( void * __attr, void * __stacksize );	( __attr __stacksize -- )
 EXTERN: "C" int pthread_attr_setstacksize( void * __attr, n __stacksize );	( __attr __stacksize -- )
+EXTERN: "C" int pthread_attr_getstack( void * __attr, void * __stackaddr, void * __stacksize );	( __attr __stackaddr __stacksize -- )
+EXTERN: "C" int pthread_attr_setstack( void * __attr, void * __stackaddr, n __stacksize );	( __attr __stackaddr __stacksize -- )
 EXTERN: "C" int pthread_setschedparam( n __target_thread, int __policy, void * __param );	( __target_thread __policy __param -- )
 EXTERN: "C" int pthread_getschedparam( n __target_thread, void * __policy, void * __param );	( __target_thread __policy __param -- )
 EXTERN: "C" int pthread_setschedprio( n __target_thread, int __prio );	( __target_thread __prio -- )
@@ -103,17 +118,38 @@ EXTERN: "C" int pthread_mutex_init( void * __mutex, void * __mutexattr );	( __mu
 EXTERN: "C" int pthread_mutex_destroy( void * __mutex );	( __mutex -- )
 EXTERN: "C" int pthread_mutex_trylock( void * __mutex );	( __mutex -- )
 EXTERN: "C" int pthread_mutex_lock( void * __mutex );	( __mutex -- )
+EXTERN: "C" int pthread_mutex_timedlock( void * __mutex, void * __abstime );	( __mutex __abstime -- )
 EXTERN: "C" int pthread_mutex_unlock( void * __mutex );	( __mutex -- )
 EXTERN: "C" int pthread_mutex_getprioceiling( void * __mutex, void * __prioceiling );	( __mutex __prioceiling -- )
 EXTERN: "C" int pthread_mutex_setprioceiling( void * __mutex, int __prioceiling, void * __old_ceiling );	( __mutex __prioceiling __old_ceiling -- )
+EXTERN: "C" int pthread_mutex_consistent( void * __mutex );	( __mutex -- )
 EXTERN: "C" int pthread_mutexattr_init( void * __attr );	( __attr -- )
 EXTERN: "C" int pthread_mutexattr_destroy( void * __attr );	( __attr -- )
 EXTERN: "C" int pthread_mutexattr_getpshared( void * __attr, void * __pshared );	( __attr __pshared -- )
 EXTERN: "C" int pthread_mutexattr_setpshared( void * __attr, int __pshared );	( __attr __pshared -- )
+EXTERN: "C" int pthread_mutexattr_gettype( void * __attr, void * __kind );	( __attr __kind -- )
+EXTERN: "C" int pthread_mutexattr_settype( void * __attr, int __kind );	( __attr __kind -- )
 EXTERN: "C" int pthread_mutexattr_getprotocol( void * __attr, void * __protocol );	( __attr __protocol -- )
 EXTERN: "C" int pthread_mutexattr_setprotocol( void * __attr, int __protocol );	( __attr __protocol -- )
 EXTERN: "C" int pthread_mutexattr_getprioceiling( void * __attr, void * __prioceiling );	( __attr __prioceiling -- )
 EXTERN: "C" int pthread_mutexattr_setprioceiling( void * __attr, int __prioceiling );	( __attr __prioceiling -- )
+EXTERN: "C" int pthread_mutexattr_getrobust( void * __attr, void * __robustness );	( __attr __robustness -- )
+EXTERN: "C" int pthread_mutexattr_setrobust( void * __attr, int __robustness );	( __attr __robustness -- )
+EXTERN: "C" int pthread_rwlock_init( void * __rwlock, void * __attr );	( __rwlock __attr -- )
+EXTERN: "C" int pthread_rwlock_destroy( void * __rwlock );	( __rwlock -- )
+EXTERN: "C" int pthread_rwlock_rdlock( void * __rwlock );	( __rwlock -- )
+EXTERN: "C" int pthread_rwlock_tryrdlock( void * __rwlock );	( __rwlock -- )
+EXTERN: "C" int pthread_rwlock_timedrdlock( void * __rwlock, void * __abstime );	( __rwlock __abstime -- )
+EXTERN: "C" int pthread_rwlock_wrlock( void * __rwlock );	( __rwlock -- )
+EXTERN: "C" int pthread_rwlock_trywrlock( void * __rwlock );	( __rwlock -- )
+EXTERN: "C" int pthread_rwlock_timedwrlock( void * __rwlock, void * __abstime );	( __rwlock __abstime -- )
+EXTERN: "C" int pthread_rwlock_unlock( void * __rwlock );	( __rwlock -- )
+EXTERN: "C" int pthread_rwlockattr_init( void * __attr );	( __attr -- )
+EXTERN: "C" int pthread_rwlockattr_destroy( void * __attr );	( __attr -- )
+EXTERN: "C" int pthread_rwlockattr_getpshared( void * __attr, void * __pshared );	( __attr __pshared -- )
+EXTERN: "C" int pthread_rwlockattr_setpshared( void * __attr, int __pshared );	( __attr __pshared -- )
+EXTERN: "C" int pthread_rwlockattr_getkind_np( void * __attr, void * __pref );	( __attr __pref -- )
+EXTERN: "C" int pthread_rwlockattr_setkind_np( void * __attr, int __pref );	( __attr __pref -- )
 EXTERN: "C" int pthread_cond_init( void * __cond, void * __cond_attr );	( __cond __cond_attr -- )
 EXTERN: "C" int pthread_cond_destroy( void * __cond );	( __cond -- )
 EXTERN: "C" int pthread_cond_signal( void * __cond );	( __cond -- )
@@ -124,10 +160,25 @@ EXTERN: "C" int pthread_condattr_init( void * __attr );	( __attr -- )
 EXTERN: "C" int pthread_condattr_destroy( void * __attr );	( __attr -- )
 EXTERN: "C" int pthread_condattr_getpshared( void * __attr, void * __pshared );	( __attr __pshared -- )
 EXTERN: "C" int pthread_condattr_setpshared( void * __attr, int __pshared );	( __attr __pshared -- )
+EXTERN: "C" int pthread_condattr_getclock( void * __attr, void * __clock_id );	( __attr __clock_id -- )
+EXTERN: "C" int pthread_condattr_setclock( void * __attr, n __clock_id );	( __attr __clock_id -- )
+EXTERN: "C" int pthread_spin_init( void * __lock, int __pshared );	( __lock __pshared -- )
+EXTERN: "C" int pthread_spin_destroy( void * __lock );	( __lock -- )
+EXTERN: "C" int pthread_spin_lock( void * __lock );	( __lock -- )
+EXTERN: "C" int pthread_spin_trylock( void * __lock );	( __lock -- )
+EXTERN: "C" int pthread_spin_unlock( void * __lock );	( __lock -- )
+EXTERN: "C" int pthread_barrier_init( void * __barrier, void * __attr, int __count );	( __barrier __attr __count -- )
+EXTERN: "C" int pthread_barrier_destroy( void * __barrier );	( __barrier -- )
+EXTERN: "C" int pthread_barrier_wait( void * __barrier );	( __barrier -- )
+EXTERN: "C" int pthread_barrierattr_init( void * __attr );	( __attr -- )
+EXTERN: "C" int pthread_barrierattr_destroy( void * __attr );	( __attr -- )
+EXTERN: "C" int pthread_barrierattr_getpshared( void * __attr, void * __pshared );	( __attr __pshared -- )
+EXTERN: "C" int pthread_barrierattr_setpshared( void * __attr, int __pshared );	( __attr __pshared -- )
 EXTERN: "C" int pthread_key_create( void * __key, void * __destr_function );	( __key __destr_function -- )
 EXTERN: "C" int pthread_key_delete( n __key );	( __key -- )
 EXTERN: "C" void * pthread_getspecific( n __key );	( __key -- )
 EXTERN: "C" int pthread_setspecific( n __key, void * __pointer );	( __key __pointer -- )
+EXTERN: "C" int pthread_getcpuclockid( n __thread_id, void * __clock_id );	( __thread_id __clock_id -- )
 EXTERN: "C" int pthread_atfork( void * __prepare, void * __parent, void * __child );	( __prepare __parent __child -- )
 
 \ ----===< postfix >===-----

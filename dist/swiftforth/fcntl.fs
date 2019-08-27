@@ -12,11 +12,16 @@
 
 \ ----===< int constants >===-----
 #1	constant _FCNTL_H
+#0	constant SEEK_SET
+#1	constant SEEK_CUR
+#2	constant SEEK_END
 
 \ ------===< functions >===-------
 FUNCTION: fcntl ( __fd __cmd  -- n )	( __fd __cmd <noname> -- )
 FUNCTION: open ( __file __oflag  -- n )	( __file __oflag <noname> -- )
 FUNCTION: creat ( __file __mode -- n )	( __file __mode -- )
+FUNCTION: posix_fadvise ( __fd __offset __len __advise -- n )	( __fd __offset __len __advise -- )
+FUNCTION: posix_fallocate ( __fd __offset __len -- n )	( __fd __offset __len -- )
 
 \ ----===< postfix >===-----
 ( none )

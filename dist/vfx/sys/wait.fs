@@ -33,7 +33,6 @@
 EXTERN: "C" n wait( void * __stat_loc );	( __stat_loc -- )
 EXTERN: "C" n waitpid( n __pid, void * __stat_loc, int __options );	( __pid __stat_loc __options -- )
 EXTERN: "C" int waitid( int __idtype, n __id, void * __infop, int __options );	( __idtype __id __infop __options -- )
-EXTERN: "C" n wait3( void * __stat_loc, int __options, void * __usage );	( __stat_loc __options __usage -- )
 
 \ ----===< postfix >===-----
 ( none )

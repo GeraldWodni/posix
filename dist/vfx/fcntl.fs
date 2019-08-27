@@ -12,11 +12,16 @@
 
 \ ----===< int constants >===-----
 #1	constant _FCNTL_H
+#0	constant SEEK_SET
+#1	constant SEEK_CUR
+#2	constant SEEK_END
 
 \ ------===< functions >===-------
 EXTERN: "C" int fcntl( int __fd, int __cmd, ...  );	( __fd __cmd <noname> -- )
 EXTERN: "C" int open( char * __file, int __oflag, ...  );	( __file __oflag <noname> -- )
 EXTERN: "C" int creat( char * __file, n __mode );	( __file __mode -- )
+EXTERN: "C" int posix_fadvise( int __fd, n __offset, n __len, int __advise );	( __fd __offset __len __advise -- )
+EXTERN: "C" int posix_fallocate( int __fd, n __offset, n __len );	( __fd __offset __len -- )
 
 \ ----===< postfix >===-----
 ( none )

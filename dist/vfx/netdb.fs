@@ -12,10 +12,29 @@
 
 \ ----===< int constants >===-----
 #1	constant _NETDB_H
-#1	constant HOST_NOT_FOUND
-#2	constant TRY_AGAIN
-#3	constant NO_RECOVERY
-#4	constant NO_DATA
+#1024	constant IPPORT_RESERVED
+#1	constant AI_PASSIVE
+#2	constant AI_CANONNAME
+#4	constant AI_NUMERICHOST
+#8	constant AI_V4MAPPED
+#16	constant AI_ALL
+#32	constant AI_ADDRCONFIG
+#1024	constant AI_NUMERICSERV
+#-1	constant EAI_BADFLAGS
+#-2	constant EAI_NONAME
+#-3	constant EAI_AGAIN
+#-4	constant EAI_FAIL
+#-6	constant EAI_FAMILY
+#-7	constant EAI_SOCKTYPE
+#-8	constant EAI_SERVICE
+#-10	constant EAI_MEMORY
+#-11	constant EAI_SYSTEM
+#-12	constant EAI_OVERFLOW
+#1	constant NI_NUMERICHOST
+#2	constant NI_NUMERICSERV
+#4	constant NI_NOFQDN
+#8	constant NI_NAMEREQD
+#16	constant NI_DGRAM
 
 \ -------===< structs >===--------
 \ hostent
@@ -39,9 +58,19 @@ begin-structure protoent
 	drop 0 8 +field protoent-p_name
 	drop 8 8 +field protoent-p_aliases
 drop 24 end-structure
+\ addrinfo
+begin-structure addrinfo
+	drop 0 4 +field addrinfo-ai_flags
+	drop 32 8 +field addrinfo-ai_canonname
+	drop 8 4 +field addrinfo-ai_socktype
+	drop 40 8 +field addrinfo-ai_next
+	drop 4 4 +field addrinfo-ai_family
+	drop 12 4 +field addrinfo-ai_protocol
+	drop 24 8 +field addrinfo-ai_addr
+	drop 16 4 +field addrinfo-ai_addrlen
+drop 48 end-structure
 
 \ ------===< functions >===-------
-EXTERN: "C" void * __h_errno_location(  );	( -- )
 EXTERN: "C" void sethostent( int __stay_open );	( __stay_open -- )
 EXTERN: "C" void endhostent(  );	( -- )
 EXTERN: "C" void * gethostent(  );	( -- )
@@ -62,6 +91,10 @@ EXTERN: "C" void endprotoent(  );	( -- )
 EXTERN: "C" void * getprotoent(  );	( -- )
 EXTERN: "C" void * getprotobyname( char * __name );	( __name -- )
 EXTERN: "C" void * getprotobynumber( int __proto );	( __proto -- )
+EXTERN: "C" int getaddrinfo( char * __name, char * __service, void * __req, void * __pai );	( __name __service __req __pai -- )
+EXTERN: "C" void freeaddrinfo( void * __ai );	( __ai -- )
+EXTERN: "C" char * gai_strerror( int __ecode );	( __ecode -- )
+EXTERN: "C" int getnameinfo( void * __sa, n __salen, void * __host, n __hostlen, void * __serv, n __servlen, int __flags );	( __sa __salen __host __hostlen __serv __servlen __flags -- )
 
 \ ----===< postfix >===-----
 ( none )

@@ -32,7 +32,6 @@ c-function gettimeofday gettimeofday a a -- n	( __tv __tz -- )
 c-function getitimer getitimer n a -- n	( __which __value -- )
 c-function setitimer setitimer n a a -- n	( __which __new __old -- )
 c-function utimes utimes s a -- n	( __file __tvp -- )
-c-function __sysconf __sysconf n -- n	( <noname> -- )
 
 \ ----===< postfix >===-----
 end-c-library

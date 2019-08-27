@@ -159,6 +159,7 @@ FUNCTION: tcsendbreak ( __fd __duration -- n )	( __fd __duration -- )
 FUNCTION: tcdrain ( __fd -- n )	( __fd -- )
 FUNCTION: tcflush ( __fd __queue_selector -- n )	( __fd __queue_selector -- )
 FUNCTION: tcflow ( __fd __action -- n )	( __fd __action -- )
+FUNCTION: tcgetsid ( __fd -- n )	( __fd -- )
 
 \ ----===< postfix >===-----
 ( none )

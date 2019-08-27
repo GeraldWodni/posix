@@ -30,7 +30,6 @@ FUNCTION: gettimeofday ( __tv __tz -- n )	( __tv __tz -- )
 FUNCTION: getitimer ( __which __value -- n )	( __which __value -- )
 FUNCTION: setitimer ( __which __new __old -- n )	( __which __new __old -- )
 FUNCTION: utimes ( __file __tvp -- n )	( __file __tvp -- )
-FUNCTION: __sysconf (  -- n )	( <noname> -- )
 
 \ ----===< postfix >===-----
 ( none )

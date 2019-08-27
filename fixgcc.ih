@@ -8,6 +8,14 @@
 #define __USE_ISOC99
 #endif
 
+#ifndef SWIG_DISABLE_POSIX
+#define __USE_POSIX
+#define __USE_POSIX199309
+#define __USE_XOPEN2K
+#define __USE_XOPEN2K8
+#define __USE_XOPEN2K8XSI
+#endif
+
 /* The following declarations fix gcc-isms which cannot be parsed by SWIG otherwise */
 
 #define __BEGIN_DECLS

@@ -14,10 +14,29 @@ s" netdb" add-lib
 
 \ ----===< int constants >===-----
 #1	constant _NETDB_H
-#1	constant HOST_NOT_FOUND
-#2	constant TRY_AGAIN
-#3	constant NO_RECOVERY
-#4	constant NO_DATA
+#1024	constant IPPORT_RESERVED
+#1	constant AI_PASSIVE
+#2	constant AI_CANONNAME
+#4	constant AI_NUMERICHOST
+#8	constant AI_V4MAPPED
+#16	constant AI_ALL
+#32	constant AI_ADDRCONFIG
+#1024	constant AI_NUMERICSERV
+#-1	constant EAI_BADFLAGS
+#-2	constant EAI_NONAME
+#-3	constant EAI_AGAIN
+#-4	constant EAI_FAIL
+#-6	constant EAI_FAMILY
+#-7	constant EAI_SOCKTYPE
+#-8	constant EAI_SERVICE
+#-10	constant EAI_MEMORY
+#-11	constant EAI_SYSTEM
+#-12	constant EAI_OVERFLOW
+#1	constant NI_NUMERICHOST
+#2	constant NI_NUMERICSERV
+#4	constant NI_NOFQDN
+#8	constant NI_NAMEREQD
+#16	constant NI_DGRAM
 
 \ -------===< structs >===--------
 \ hostent
@@ -41,9 +60,19 @@ begin-structure protoent
 	drop 0 8 +field protoent-p_name
 	drop 8 8 +field protoent-p_aliases
 drop 24 end-structure
+\ addrinfo
+begin-structure addrinfo
+	drop 0 4 +field addrinfo-ai_flags
+	drop 32 8 +field addrinfo-ai_canonname
+	drop 8 4 +field addrinfo-ai_socktype
+	drop 40 8 +field addrinfo-ai_next
+	drop 4 4 +field addrinfo-ai_family
+	drop 12 4 +field addrinfo-ai_protocol
+	drop 24 8 +field addrinfo-ai_addr
+	drop 16 4 +field addrinfo-ai_addrlen
+drop 48 end-structure
 
 \ ------===< functions >===-------
-c-function __h_errno_location __h_errno_location  -- a	( -- )
 c-function sethostent sethostent n -- void	( __stay_open -- )
 c-function endhostent endhostent  -- void	( -- )
 c-function gethostent gethostent  -- a	( -- )
@@ -64,6 +93,10 @@ c-function endprotoent endprotoent  -- void	( -- )
 c-function getprotoent getprotoent  -- a	( -- )
 c-function getprotobyname getprotobyname s -- a	( __name -- )
 c-function getprotobynumber getprotobynumber n -- a	( __proto -- )
+c-function getaddrinfo getaddrinfo s s a a -- n	( __name __service __req __pai -- )
+c-function freeaddrinfo freeaddrinfo a -- void	( __ai -- )
+c-function gai_strerror gai_strerror n -- s	( __ecode -- )
+c-function getnameinfo getnameinfo a n a n a n n -- n	( __sa __salen __host __hostlen __serv __servlen __flags -- )
 
 \ ----===< postfix >===-----
 end-c-library

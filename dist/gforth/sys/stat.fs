@@ -52,10 +52,13 @@ s" sys_stat" add-lib
 \ ------===< functions >===-------
 c-function stat stat s a -- n	( __file __buf -- )
 c-function fstat fstat n a -- n	( __fd __buf -- )
+c-function lstat lstat s a -- n	( __file __buf -- )
 c-function chmod chmod s n -- n	( __file __mode -- )
+c-function fchmod fchmod n n -- n	( __fd __mode -- )
 c-function umask umask n -- n	( __mask -- )
 c-function mkdir mkdir s n -- n	( __path __mode -- )
 c-function mkfifo mkfifo s n -- n	( __path __mode -- )
+c-function futimens futimens n a -- n	( __fd __times -- )
 c-function __fxstat __fxstat n n a -- n	( __ver __fildes __stat_buf -- )
 c-function __xstat __xstat n s a -- n	( __ver __filename __stat_buf -- )
 c-function __lxstat __lxstat n s a -- n	( __ver __filename __stat_buf -- )

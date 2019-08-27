@@ -17,6 +17,7 @@ s" monetary" add-lib
 
 \ ------===< functions >===-------
 c-function strfmon strfmon a u s ... -- n	( __s __maxsize __format <noname> -- )
+c-function strfmon_l strfmon_l a u n s ... -- n	( __s __maxsize __loc __format <noname> -- )
 
 \ ----===< postfix >===-----
 end-c-library

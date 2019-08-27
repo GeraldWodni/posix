@@ -20,6 +20,7 @@ EXTERN: "C" void * sem_open( char * __name, int __oflag, ...  );	( __name __ofla
 EXTERN: "C" int sem_close( void * __sem );	( __sem -- )
 EXTERN: "C" int sem_unlink( char * __name );	( __name -- )
 EXTERN: "C" int sem_wait( void * __sem );	( __sem -- )
+EXTERN: "C" int sem_timedwait( void * __sem, void * __abstime );	( __sem __abstime -- )
 EXTERN: "C" int sem_trywait( void * __sem );	( __sem -- )
 EXTERN: "C" int sem_post( void * __sem );	( __sem -- )
 EXTERN: "C" int sem_getvalue( void * __sem, void * __sval );	( __sem __sval -- )

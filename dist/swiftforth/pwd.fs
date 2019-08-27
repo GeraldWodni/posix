@@ -28,6 +28,8 @@ drop 48 end-structure
 \ ------===< functions >===-------
 FUNCTION: getpwuid ( __uid -- a )	( __uid -- )
 FUNCTION: getpwnam ( __name -- a )	( __name -- )
+FUNCTION: getpwuid_r ( __uid __resultbuf __buffer __buflen __result -- n )	( __uid __resultbuf __buffer __buflen __result -- )
+FUNCTION: getpwnam_r ( __name __resultbuf __buffer __buflen __result -- n )	( __name __resultbuf __buffer __buflen __result -- )
 
 \ ----===< postfix >===-----
 ( none )

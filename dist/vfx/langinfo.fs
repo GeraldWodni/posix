@@ -400,6 +400,7 @@
 
 \ ------===< functions >===-------
 EXTERN: "C" void * nl_langinfo( n __item );	( __item -- )
+EXTERN: "C" void * nl_langinfo_l( n __item, n __l );	( __item __l -- )
 
 \ ----===< postfix >===-----
 ( none )

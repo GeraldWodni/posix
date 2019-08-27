@@ -15,9 +15,14 @@
 
 \ ------===< functions >===-------
 FUNCTION: opendir ( __name -- a )	( __name -- )
+FUNCTION: fdopendir ( __fd -- a )	( __fd -- )
 FUNCTION: closedir ( __dirp -- n )	( __dirp -- )
 FUNCTION: readdir ( __dirp -- a )	( __dirp -- )
+FUNCTION: readdir_r ( __dirp __entry __result -- n )	( __dirp __entry __result -- )
 FUNCTION: rewinddir ( __dirp -- void )	( __dirp -- )
+FUNCTION: dirfd ( __dirp -- n )	( __dirp -- )
+FUNCTION: scandir ( __dir __namelist __selector __cmp -- n )	( __dir __namelist __selector __cmp -- )
+FUNCTION: alphasort ( __e1 __e2 -- n )	( __e1 __e2 -- )
 
 \ ----===< postfix >===-----
 ( none )

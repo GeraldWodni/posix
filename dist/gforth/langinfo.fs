@@ -402,6 +402,7 @@ s" langinfo" add-lib
 
 \ ------===< functions >===-------
 c-function nl_langinfo nl_langinfo n -- a	( __item -- )
+c-function nl_langinfo_l nl_langinfo_l n n -- a	( __item __l -- )
 
 \ ----===< postfix >===-----
 end-c-library

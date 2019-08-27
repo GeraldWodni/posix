@@ -35,7 +35,6 @@ s" sys_wait" add-lib
 c-function wait wait a -- n	( __stat_loc -- )
 c-function waitpid waitpid n a n -- n	( __pid __stat_loc __options -- )
 c-function waitid waitid n n a n -- n	( __idtype __id __infop __options -- )
-c-function wait3 wait3 a n a -- n	( __stat_loc __options __usage -- )
 
 \ ----===< postfix >===-----
 end-c-library

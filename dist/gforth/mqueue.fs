@@ -24,6 +24,8 @@ c-function mq_unlink mq_unlink s -- n	( __name -- )
 c-function mq_notify mq_notify n a -- n	( __mqdes __notification -- )
 c-function mq_receive mq_receive n a u a -- n	( __mqdes __msg_ptr __msg_len __msg_prio -- )
 c-function mq_send mq_send n s u u -- n	( __mqdes __msg_ptr __msg_len __msg_prio -- )
+c-function mq_timedreceive mq_timedreceive n a u a a -- n	( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- )
+c-function mq_timedsend mq_timedsend n s u u a -- n	( __mqdes __msg_ptr __msg_len __msg_prio __abs_timeout -- )
 
 \ ----===< postfix >===-----
 end-c-library
