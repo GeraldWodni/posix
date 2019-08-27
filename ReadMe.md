@@ -31,3 +31,6 @@ should always be includeable like one of the following:
 
 ### regex.h, sys/socket.h
 Includes bitfields in structs. These fail compilation when offsetof is used on them.
+
+### trace.h
+Where is this file in a strandard GNU distro?

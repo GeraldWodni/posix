@@ -72,16 +72,16 @@ Files Todo:
 [x]sys/un.h
 [x]sys/utsname.h
 [x]sys/wait.h
-[ ]syslog.h
-[ ]tar.h
-[ ]termios.h
-[ ]tgmath.h
-[ ]time.h
-[ ]trace.h
-[ ]ulimit.h
-[ ]unistd.h
-[ ]utime.h
-[ ]utmpx.h
-[ ]wchar.h
-[ ]wctype.h
-[ ]wordexp.h
+[x]syslog.h
+[x]tar.h
+[x]termios.h
+[-]tgmath.h - won't do
+[x]time.h
+[?]trace.h - help required
+[x]ulimit.h
+[x]unistd.h
+[x]utime.h
+[x]utmpx.h
+[x]wchar.h
+[x]wctype.h
+[x]wordexp.h
