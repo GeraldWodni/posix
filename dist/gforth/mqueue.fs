@@ -15,6 +15,16 @@ s" mqueue" add-lib
 \ ----===< int constants >===-----
 #1	constant _MQUEUE_H
 
+\ -------===< structs >===--------
+\ mq_attr
+begin-structure mq_attr
+	drop 0 8 +field mq_attr-mq_flags
+	drop 32 32 +field mq_attr-__pad
+	drop 8 8 +field mq_attr-mq_maxmsg
+	drop 16 8 +field mq_attr-mq_msgsize
+	drop 24 8 +field mq_attr-mq_curmsgs
+drop 64 end-structure
+
 \ ------===< functions >===-------
 c-function mq_open mq_open s n ... -- n	( __name __oflag <noname> -- )
 c-function mq_close mq_close n -- n	( __mqdes -- )

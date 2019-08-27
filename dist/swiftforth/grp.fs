@@ -23,6 +23,9 @@ begin-structure group
 drop 32 end-structure
 
 \ ------===< functions >===-------
+FUNCTION: setgrent (  -- void )	( -- )
+FUNCTION: endgrent (  -- void )	( -- )
+FUNCTION: getgrent (  -- a )	( -- )
 FUNCTION: getgrgid ( __gid -- a )	( __gid -- )
 FUNCTION: getgrnam ( __name -- a )	( __name -- )
 FUNCTION: getgrgid_r ( __gid __resultbuf __buffer __buflen __result -- n )	( __gid __resultbuf __buffer __buflen __result -- )

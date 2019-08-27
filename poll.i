@@ -9,3 +9,6 @@
 
 /* poll just includes sys/poll on GNU, may need additional attention or explicit passing of the function */
 %include <sys/poll.h>
+
+/* GNU seperates the constants into extra files */
+%include <bits/poll.h>

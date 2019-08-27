@@ -14,6 +14,16 @@ s" poll" add-lib
 
 \ ----===< int constants >===-----
 #1	constant _SYS_POLL_H
+#1	constant POLLIN
+#2	constant POLLPRI
+#4	constant POLLOUT
+#64	constant POLLRDNORM
+#128	constant POLLRDBAND
+#256	constant POLLWRNORM
+#512	constant POLLWRBAND
+#8	constant POLLERR
+#16	constant POLLHUP
+#32	constant POLLNVAL
 
 \ -------===< structs >===--------
 \ pollfd

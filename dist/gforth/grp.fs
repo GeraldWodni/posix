@@ -10,6 +10,7 @@
 \ ----===< prefix >===-----
 c-library grp
 s" grp" add-lib
+\c #define __USE_XOPEN_EXTENDED
 \c #include <grp.h>
 
 \ ----===< int constants >===-----
@@ -25,6 +26,9 @@ begin-structure group
 drop 32 end-structure
 
 \ ------===< functions >===-------
+c-function setgrent setgrent  -- void	( -- )
+c-function endgrent endgrent  -- void	( -- )
+c-function getgrent getgrent  -- a	( -- )
 c-function getgrgid getgrgid n -- a	( __gid -- )
 c-function getgrnam getgrnam s -- a	( __name -- )
 c-function getgrgid_r getgrgid_r n a a u a -- n	( __gid __resultbuf __buffer __buflen __result -- )

@@ -10,6 +10,7 @@
 \ ----===< prefix >===-----
 c-library search
 s" search" add-lib
+\c #define __USE_MISC
 \c #include <search.h>
 
 \ ----===< int constants >===-----
@@ -26,6 +27,8 @@ s" search" add-lib
 \ -------===< structs >===--------
 \ ENTRY
 begin-structure ENTRY
+	drop 8 8 +field ENTRY-data
+	drop 0 8 +field ENTRY-key
 drop 16 end-structure
 
 \ ------===< callbacks >===-------
@@ -33,6 +36,8 @@ c-callback __compar_fn_t: a a -- n	( <noname> <noname> -- )
 c-callback __action_fn_t: a n n -- void	( __nodep __value __level -- )
 
 \ ------===< functions >===-------
+c-function insque insque a a -- void	( __elem __prev -- )
+c-function remque remque a -- void	( __elem -- )
 c-function hsearch hsearch a{*(ENTRY*)} n -- a	( __item __action -- )
 c-function hcreate hcreate u -- n	( __nel -- )
 c-function hdestroy hdestroy  -- void	( -- )

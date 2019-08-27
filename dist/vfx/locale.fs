@@ -12,6 +12,19 @@
 
 \ ----===< int constants >===-----
 #1	constant _LOCALE_H
+#0	constant LC_CTYPE
+#1	constant LC_NUMERIC
+#2	constant LC_TIME
+#3	constant LC_COLLATE
+#4	constant LC_MONETARY
+#5	constant LC_MESSAGES
+#6	constant LC_ALL
+#7	constant LC_PAPER
+#8	constant LC_NAME
+#9	constant LC_ADDRESS
+#10	constant LC_TELEPHONE
+#11	constant LC_MEASUREMENT
+#12	constant LC_IDENTIFICATION
 
 \ -------===< structs >===--------
 \ lconv

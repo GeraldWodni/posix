@@ -13,6 +13,16 @@
 \ ----===< int constants >===-----
 #1	constant _MQUEUE_H
 
+\ -------===< structs >===--------
+\ mq_attr
+begin-structure mq_attr
+	drop 0 8 +field mq_attr-mq_flags
+	drop 32 32 +field mq_attr-__pad
+	drop 8 8 +field mq_attr-mq_maxmsg
+	drop 16 8 +field mq_attr-mq_msgsize
+	drop 24 8 +field mq_attr-mq_curmsgs
+drop 64 end-structure
+
 \ ------===< functions >===-------
 FUNCTION: mq_open ( __name __oflag  -- n )	( __name __oflag <noname> -- )
 FUNCTION: mq_close ( __mqdes -- n )	( __mqdes -- )

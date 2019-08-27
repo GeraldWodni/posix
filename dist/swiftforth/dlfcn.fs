@@ -12,6 +12,14 @@
 
 \ ----===< int constants >===-----
 #1	constant _DLFCN_H
+#1	constant RTLD_LAZY
+#2	constant RTLD_NOW
+#3	constant RTLD_BINDING_MASK
+#4	constant RTLD_NOLOAD
+#8	constant RTLD_DEEPBIND
+#256	constant RTLD_GLOBAL
+#0	constant RTLD_LOCAL
+#4096	constant RTLD_NODELETE
 
 \ ------===< functions >===-------
 FUNCTION: dlopen ( __file __mode -- a )	( __file __mode -- )

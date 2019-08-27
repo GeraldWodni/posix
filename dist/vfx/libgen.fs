@@ -10,12 +10,9 @@
 \ ----===< prefix >===-----
 ( none )
 
-\ ----===< int constants >===-----
-#1	constant _LIBGEN_H
-
 \ ------===< functions >===-------
 EXTERN: "C" void * dirname( void * __path );	( __path -- )
-EXTERN: "C" void * __xpg_basename( void * __path );	( __path -- )
+EXTERN: "C" void * basename( void * __path );	( __path -- )
 
 \ ----===< postfix >===-----
 ( none )

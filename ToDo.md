@@ -2,6 +2,8 @@ Files Todo:
 
 [ ] ... not implemented
 [x] ... done
+[-] ... won't do: does not make sense to implement for Forth
+[?] ... help required
 
 [x]aio.h
 [ ]arpa/inet.h

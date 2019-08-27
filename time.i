@@ -12,6 +12,5 @@
 %include <time.h>
 
 /* GNU seperates the structures and constants into extra files */
-
-/* struct */
+%include <bits/time.h>
 %include <bits/types/struct_tm.h>

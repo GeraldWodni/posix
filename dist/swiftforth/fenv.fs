@@ -13,6 +13,17 @@
 \ ----===< int constants >===-----
 #1	constant _FENV_H
 
+\ --------===< enums >===---------
+#1	constant FE_INVALID
+#4	constant FE_DIVBYZERO
+#8	constant FE_OVERFLOW
+#16	constant FE_UNDERFLOW
+#32	constant FE_INEXACT
+#0	constant FE_TONEAREST
+#1024	constant FE_DOWNWARD
+#2048	constant FE_UPWARD
+#3072	constant FE_TOWARDZERO
+
 \ ------===< functions >===-------
 FUNCTION: feclearexcept ( __excepts -- n )	( __excepts -- )
 FUNCTION: fegetexceptflag ( __flagp __excepts -- n )	( __flagp __excepts -- )

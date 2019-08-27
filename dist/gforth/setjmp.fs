@@ -12,9 +12,6 @@ c-library setjmp
 s" setjmp" add-lib
 \c #include <setjmp.h>
 
-\ ----===< int constants >===-----
-#1	constant _SETJMP_H
-
 \ -------===< structs >===--------
 \ __jmp_buf_tag
 begin-structure __jmp_buf_tag
@@ -25,8 +22,7 @@ drop 200 end-structure
 
 \ ------===< functions >===-------
 c-function setjmp setjmp a -- n	( __env -- )
-c-function __sigsetjmp __sigsetjmp a n -- n	( __env __savemask -- )
-c-function _setjmp _setjmp a -- n	( __env -- )
+c-function sigsetjmp sigsetjmp a n -- n	( __env __savemask -- )
 c-function longjmp longjmp a n -- void	( __env __val -- )
 c-function siglongjmp siglongjmp a n -- void	( __env __val -- )
 

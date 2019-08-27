@@ -1,4 +1,3 @@
-
 /* add types */
 %typemap(forth) size_t "u"
 %typemap(forth) __ssize_t "n"

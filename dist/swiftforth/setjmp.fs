@@ -10,9 +10,6 @@
 \ ----===< prefix >===-----
 ( none )
 
-\ ----===< int constants >===-----
-#1	constant _SETJMP_H
-
 \ -------===< structs >===--------
 \ __jmp_buf_tag
 begin-structure __jmp_buf_tag
@@ -23,8 +20,7 @@ drop 200 end-structure
 
 \ ------===< functions >===-------
 FUNCTION: setjmp ( __env -- n )	( __env -- )
-FUNCTION: __sigsetjmp ( __env __savemask -- n )	( __env __savemask -- )
-FUNCTION: _setjmp ( __env -- n )	( __env -- )
+FUNCTION: sigsetjmp ( __env __savemask -- n )	( __env __savemask -- )
 FUNCTION: longjmp ( __env __val -- void )	( __env __val -- )
 FUNCTION: siglongjmp ( __env __val -- void )	( __env __val -- )
 

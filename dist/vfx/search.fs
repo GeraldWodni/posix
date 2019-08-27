@@ -24,6 +24,8 @@
 \ -------===< structs >===--------
 \ ENTRY
 begin-structure ENTRY
+	drop 8 8 +field ENTRY-data
+	drop 0 8 +field ENTRY-key
 drop 16 end-structure
 
 \ ------===< callbacks >===-------
@@ -31,6 +33,8 @@ drop 16 end-structure
 	( __nodep __value __level -- )
 
 \ ------===< functions >===-------
+EXTERN: "C" void insque( void * __elem, void * __prev );	( __elem __prev -- )
+EXTERN: "C" void remque( void * __elem );	( __elem -- )
 EXTERN: "C" void * hsearch( void * __item, int __action );	( __item __action -- )
 EXTERN: "C" int hcreate( n __nel );	( __nel -- )
 EXTERN: "C" void hdestroy(  );	( -- )

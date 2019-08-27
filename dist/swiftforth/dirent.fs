@@ -12,6 +12,17 @@
 
 \ ----===< int constants >===-----
 #1	constant _DIRENT_H
+#1	constant _DIRENT_MATCHES_DIRENT64
+
+\ -------===< structs >===--------
+\ dirent
+begin-structure dirent
+	drop 18 1 +field dirent-d_type
+	drop 8 8 +field dirent-d_off
+	drop 16 2 +field dirent-d_reclen
+	drop 0 8 +field dirent-d_ino
+	drop 19 256 +field dirent-d_name
+drop 280 end-structure
 
 \ ------===< functions >===-------
 FUNCTION: opendir ( __name -- a )	( __name -- )

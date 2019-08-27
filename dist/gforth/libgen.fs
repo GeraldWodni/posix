@@ -12,12 +12,9 @@ c-library libgen
 s" libgen" add-lib
 \c #include <libgen.h>
 
-\ ----===< int constants >===-----
-#1	constant _LIBGEN_H
-
 \ ------===< functions >===-------
 c-function dirname dirname a -- a	( __path -- )
-c-function __xpg_basename __xpg_basename a -- a	( __path -- )
+c-function basename basename a -- a	( __path -- )
 
 \ ----===< postfix >===-----
 end-c-library

@@ -14,6 +14,19 @@ s" time" add-lib
 
 \ ----===< int constants >===-----
 #1	constant _TIME_H
+#1	constant _BITS_TIME_H
+#0	constant CLOCK_REALTIME
+#1	constant CLOCK_MONOTONIC
+#2	constant CLOCK_PROCESS_CPUTIME_ID
+#3	constant CLOCK_THREAD_CPUTIME_ID
+#4	constant CLOCK_MONOTONIC_RAW
+#5	constant CLOCK_REALTIME_COARSE
+#6	constant CLOCK_MONOTONIC_COARSE
+#7	constant CLOCK_BOOTTIME
+#8	constant CLOCK_REALTIME_ALARM
+#9	constant CLOCK_BOOTTIME_ALARM
+#11	constant CLOCK_TAI
+#1	constant TIMER_ABSTIME
 #1	constant __struct_tm_defined
 
 \ -------===< structs >===--------

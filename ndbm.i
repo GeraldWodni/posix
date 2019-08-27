@@ -8,3 +8,6 @@
 %include "fixgcc.ih"
 
 %include <ndbm.h>
+
+/* GNU seperates part of the definition into gdbm */
+%include <gdbm.h>

@@ -1,0 +1,2 @@
+/* ignores */
+%rename("$ignore", regexmatch$name="^_") "";

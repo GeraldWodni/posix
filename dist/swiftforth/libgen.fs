@@ -10,12 +10,9 @@
 \ ----===< prefix >===-----
 ( none )
 
-\ ----===< int constants >===-----
-#1	constant _LIBGEN_H
-
 \ ------===< functions >===-------
 FUNCTION: dirname ( __path -- a )	( __path -- )
-FUNCTION: __xpg_basename ( __path -- a )	( __path -- )
+FUNCTION: basename ( __path -- a )	( __path -- )
 
 \ ----===< postfix >===-----
 ( none )

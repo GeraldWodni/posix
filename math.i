@@ -14,3 +14,6 @@
 %include "fixgcc.ih"
 
 %include <math.h>
+
+/* use helper file because of the way enums are defined */
+%include <helpers/math.h>

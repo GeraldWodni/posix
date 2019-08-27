@@ -10,6 +10,7 @@
 \ ----===< prefix >===-----
 c-library ftw
 s" ftw" add-lib
+\c #define __USE_XOPEN_EXTENDED
 \c #include <ftw.h>
 
 \ ----===< int constants >===-----
@@ -20,12 +21,28 @@ s" ftw" add-lib
 #1	constant FTW_D
 #2	constant FTW_DNR
 #3	constant FTW_NS
+#4	constant FTW_SL
+#5	constant FTW_DP
+#6	constant FTW_SLN
+#1	constant FTW_PHYS
+#2	constant FTW_MOUNT
+#4	constant FTW_CHDIR
+#8	constant FTW_DEPTH
+
+\ -------===< structs >===--------
+\ FTW
+begin-structure FTW
+	drop 4 4 +field FTW-level
+	drop 0 4 +field FTW-base
+drop 8 end-structure
 
 \ ------===< callbacks >===-------
 c-callback __ftw_func_t: s a n -- n	( __filename __status __flag -- )
+c-callback __nftw_func_t: s a n a -- n	( __filename __status __flag __info -- )
 
 \ ------===< functions >===-------
 c-function ftw ftw s a n -- n	( __dir __func __descriptors -- )
+c-function nftw nftw s a n n -- n	( __dir __func __descriptors __flag -- )
 
 \ ----===< postfix >===-----
 end-c-library

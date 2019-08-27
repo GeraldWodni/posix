@@ -29,8 +29,15 @@ should always be includeable like one of the following:
 ### add-lib
 - check which and if add-lib is required
 
+
 ### regex.h, sys/socket.h
 Includes bitfields in structs. These fail compilation when offsetof is used on them.
 
 ### trace.h
 Where is this file in a strandard GNU distro?
+
+### cpio.h
+string constant `MAGIC` missing
+
+### signal.h
+structures remain to be extracted

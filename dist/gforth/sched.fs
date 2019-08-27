@@ -14,6 +14,17 @@ s" sched" add-lib
 
 \ ----===< int constants >===-----
 #1	constant _SCHED_H
+#1	constant _BITS_SCHED_H
+#0	constant SCHED_OTHER
+#1	constant SCHED_FIFO
+#2	constant SCHED_RR
+#1	constant _BITS_TYPES_STRUCT_SCHED_PARAM
+
+\ -------===< structs >===--------
+\ sched_param
+begin-structure sched_param
+	drop 0 4 +field sched_param-sched_priority
+drop 4 end-structure
 
 \ ------===< functions >===-------
 c-function sched_setparam sched_setparam n a -- n	( __pid __param -- )

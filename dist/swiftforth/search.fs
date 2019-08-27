@@ -24,6 +24,8 @@
 \ -------===< structs >===--------
 \ ENTRY
 begin-structure ENTRY
+	drop 8 8 +field ENTRY-data
+	drop 0 8 +field ENTRY-key
 drop 16 end-structure
 
 \ ------===< callbacks >===-------
@@ -31,6 +33,8 @@ drop 16 end-structure
 	( __nodep __value __level -- )
 
 \ ------===< functions >===-------
+FUNCTION: insque ( __elem __prev -- void )	( __elem __prev -- )
+FUNCTION: remque ( __elem -- void )	( __elem -- )
 FUNCTION: hsearch ( __item __action -- a )	( __item __action -- )
 FUNCTION: hcreate ( __nel -- n )	( __nel -- )
 FUNCTION: hdestroy (  -- void )	( -- )
