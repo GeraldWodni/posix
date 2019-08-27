@@ -6,7 +6,7 @@ Files Todo:
 [?] ... help required
 
 [x]aio.h
-[ ]arpa/inet.h
+[x]arpa/inet.h
 [x]assert.h
 [ ]complex.h
 [x]cpio.h
@@ -64,7 +64,7 @@ Files Todo:
 [x]sys/select.h
 [x]sys/sem.h
 [x]sys/shm.h
-[ ]sys/socket.h
+[x]sys/socket.h
 [x]sys/stat.h
 [x]sys/statvfs.h
 [x]sys/time.h

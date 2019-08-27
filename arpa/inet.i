@@ -8,6 +8,3 @@
 %include "fixgcc.ih"
 
 %include <arpa/inet.h>
-
-/* GNU seperates the structures into this file */
-//%include <bits/stropts.h>
