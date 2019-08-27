@@ -28,3 +28,6 @@ should always be includeable like one of the following:
 
 ### add-lib
 - check which and if add-lib is required
+
+### regex.h
+Includes bitfields in structs. These fail compilation when offsetof is used on them.

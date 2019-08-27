@@ -33,28 +33,28 @@ Files Todo:
 [x]ndbm.h
 [x]net/if.h
 [x]netdb.h
-[ ]netinet/in.h
-[ ]netinet/tcp.h
-[ ]nl_types.h
-[ ]poll.h
-[ ]pthread.h
-[ ]pwd.h
+[x]netinet/in.h
+[x]netinet/tcp.h
+[x]nl_types.h
+[x]poll.h
+[x]pthread.h
+[x]pwd.h
 [ ]regex.h
-[ ]sched.h
-[ ]search.h
-[ ]semaphore.h
-[ ]setjmp.h
-[ ]signal.h
-[ ]spawn.h
-[ ]stdarg.h
-[ ]stdbool.h
-[ ]stddef.h
-[ ]stdint.h
-[ ]stdio.h
-[ ]stdlib.h
-[ ]string.h
-[ ]strings.h
-[ ]stropts.h
+[x]sched.h
+[x]search.h
+[x]semaphore.h
+[x]setjmp.h
+[x]signal.h
+[x]spawn.h
+[-]stdarg.h  - won't do
+[-]stdbool.h - won't to
+[-]stddef.h  - won't do
+[x]stdint.h
+[x]stdio.h
+[x]stdlib.h
+[x]string.h
+[x]strings.h
+[x]stropts.h
 [ ]sys/ipc.h
 [ ]sys/mman.h
 [ ]sys/msg.h
