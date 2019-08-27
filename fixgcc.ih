@@ -16,6 +16,7 @@
 #define __THROWNL
 #define __attribute__(X)
 #define __attribute_const__
+#define __attribute_format_strfmon__(X,Y)
 #define __attribute_malloc__
 #define __attribute_pure__
 #define __attribute_warn_unused_result__

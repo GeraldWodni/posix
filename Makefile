@@ -40,9 +40,9 @@ all: $(FS_FILES)
 
 # Execute and save output
 %.fs: %.fsx
-	mkdir -p dist/gforth
-	mkdir -p dist/vfx
-	mkdir -p dist/swiftforth
+	mkdir -p dist/gforth/$(dir $@)
+	mkdir -p dist/vfx/$(dir $@)
+	mkdir -p dist/swiftforth/$(dir $@)
 	./$< -gforth > dist/gforth/$@
 	./$< -vfx > dist/vfx/$@
 	./$< -swiftforth > dist/swiftforth/$@

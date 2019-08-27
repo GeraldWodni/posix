@@ -27,12 +27,12 @@ Files Todo:
 [x]libgen.h
 [x]limits.h
 [x]locale.h
-[ ]math.h
-[ ]monetary.h
-[ ]mqueue.h
-[ ]ndbm.h
-[ ]net/if.h
-[ ]netdb.h
+[x]math.h
+[x]monetary.h
+[x]mqueue.h
+[x]ndbm.h
+[x]net/if.h
+[x]netdb.h
 [ ]netinet/in.h
 [ ]netinet/tcp.h
 [ ]nl_types.h
