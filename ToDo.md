@@ -55,23 +55,23 @@ Files Todo:
 [x]string.h
 [x]strings.h
 [x]stropts.h
-[ ]sys/ipc.h
-[ ]sys/mman.h
-[ ]sys/msg.h
-[ ]sys/resource.h
-[ ]sys/select.h
-[ ]sys/sem.h
-[ ]sys/shm.h
+[x]sys/ipc.h
+[x]sys/mman.h
+[x]sys/msg.h
+[x]sys/resource.h
+[x]sys/select.h
+[x]sys/sem.h
+[x]sys/shm.h
 [ ]sys/socket.h
-[ ]sys/stat.h
-[ ]sys/statvfs.h
-[ ]sys/time.h
-[ ]sys/times.h
-[ ]sys/types.h
-[ ]sys/uio.h
-[ ]sys/un.h
-[ ]sys/utsname.h
-[ ]sys/wait.h
+[x]sys/stat.h
+[x]sys/statvfs.h
+[x]sys/time.h
+[x]sys/times.h
+[-]sys/types.h - won't do
+[x]sys/uio.h
+[x]sys/un.h
+[x]sys/utsname.h
+[x]sys/wait.h
 [ ]syslog.h
 [ ]tar.h
 [ ]termios.h
