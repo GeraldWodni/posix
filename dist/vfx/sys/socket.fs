@@ -133,9 +133,9 @@
 #281	constant SOL_KCM
 #282	constant SOL_TLS
 #283	constant SOL_XDP
-#128	constant SOMAXCONN
-#1	constant SOL_SOCKET
+#4096	constant SOMAXCONN
 #1	constant SO_DEBUG
+#1	constant SOL_SOCKET
 #2	constant SO_REUSEADDR
 #3	constant SO_TYPE
 #4	constant SO_ERROR
@@ -206,6 +206,7 @@
 #65	constant SO_TIMESTAMPING_NEW
 #66	constant SO_RCVTIMEO_NEW
 #67	constant SO_SNDTIMEO_NEW
+#68	constant SO_DETACH_REUSEPORT_BPF
 
 \ --------===< enums >===---------
 #0	constant SHUT_RD

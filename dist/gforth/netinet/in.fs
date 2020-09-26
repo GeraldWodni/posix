@@ -54,8 +54,10 @@ s" netinet_in" add-lib
 #132	constant IPPROTO_SCTP
 #136	constant IPPROTO_UDPLITE
 #137	constant IPPROTO_MPLS
+#143	constant IPPROTO_ETHERNET
 #255	constant IPPROTO_RAW
-#256	constant IPPROTO_MAX
+#262	constant IPPROTO_MPTCP
+#263	constant IPPROTO_MAX
 #0	constant IPPROTO_HOPOPTS
 #43	constant IPPROTO_ROUTING
 #44	constant IPPROTO_FRAGMENT

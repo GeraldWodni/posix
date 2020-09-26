@@ -49,6 +49,7 @@
 #35	constant TCP_ZEROCOPY_RECEIVE
 #36	constant TCP_INQ
 #36	constant TCP_CM_INQ
+#37	constant TCP_TX_DELAY
 #1	constant TCP_REPAIR_ON
 #0	constant TCP_REPAIR_OFF
 #-1	constant TCP_REPAIR_OFF_NO_WP
