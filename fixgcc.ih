@@ -21,11 +21,14 @@
 #define __END_DECLS
 #define __THROW
 #define __THROWNL
+#define __attr_access(X)
 #define __attribute__(X)
+#define __attribute_alloc_size__(X);
 #define __attribute_const__
 #define __attribute_deprecated__
 #define __attribute_format_strfmon__(X,Y)
 #define __attribute_malloc__
+#define __attribute_nonstring__
 #define __attribute_pure__
 #define __attribute_warn_unused_result__
 #define __extension__
