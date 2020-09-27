@@ -13,6 +13,7 @@
 #define __USE_XOPEN2K
 #define __USE_XOPEN2K8
 #define __USE_XOPEN2K8XSI
+#define __GLIBC_USE(X) 0
 #endif
 
 /* The following declarations fix gcc-isms which cannot be parsed by SWIG otherwise */
@@ -26,6 +27,7 @@
 #define __attribute_alloc_size__(X);
 #define __attribute_const__
 #define __attribute_deprecated__
+#define __attribute_deprecated_msg__(X)
 #define __attribute_format_strfmon__(X,Y)
 #define __attribute_malloc__
 #define __attribute_nonstring__
