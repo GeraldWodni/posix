@@ -11,3 +11,4 @@
 
 /* GNU seperates the modebits into this file */
 %include <bits/msq.h>
+%include <bits/types/struct_msqid_ds.h>

@@ -11,3 +11,4 @@
 
 /* GNU seperates the modebits into this file */
 %include <bits/ipc.h>
+%include <bits/ipc-perm.h>

@@ -11,3 +11,4 @@
 
 /* GNU seperates the modebits into this file */
 %include <bits/shm.h>
+%include <bits/types/struct_shmid_ds.h>

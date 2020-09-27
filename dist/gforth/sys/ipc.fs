@@ -24,7 +24,6 @@ s" sys_ipc" add-lib
 \ -------===< structs >===--------
 \ ipc_perm
 begin-structure ipc_perm
-	drop 22 2 +field ipc_perm-__pad1
 	drop 26 2 +field ipc_perm-__pad2
 	drop 0 4 +field ipc_perm-__key
 	drop 32 8 +field ipc_perm-__glibc_reserved1
@@ -34,7 +33,7 @@ begin-structure ipc_perm
 	drop 8 4 +field ipc_perm-gid
 	drop 12 4 +field ipc_perm-cuid
 	drop 16 4 +field ipc_perm-cgid
-	drop 20 2 +field ipc_perm-mode
+	drop 20 4 +field ipc_perm-mode
 drop 48 end-structure
 
 \ ------===< functions >===-------

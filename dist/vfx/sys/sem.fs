@@ -31,6 +31,8 @@ begin-structure sembuf
 drop 6 end-structure
 \ semid_ds
 begin-structure semid_ds
+	drop 56 8 +field semid_ds-__sem_otime_high
+	drop 72 8 +field semid_ds-__sem_ctime_high
 	drop 48 8 +field semid_ds-sem_otime
 	drop 0 48 +field semid_ds-sem_perm
 	drop 64 8 +field semid_ds-sem_ctime

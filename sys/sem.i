@@ -11,3 +11,4 @@
 
 /* GNU seperates the modebits into this file */
 %include <bits/sem.h>
+%include <bits/types/struct_semid_ds.h>
