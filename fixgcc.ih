@@ -13,7 +13,6 @@
 #define __USE_XOPEN2K
 #define __USE_XOPEN2K8
 #define __USE_XOPEN2K8XSI
-#define __GLIBC_USE(X) 0
 #endif
 
 /* The following declarations fix gcc-isms which cannot be parsed by SWIG otherwise */

@@ -8,6 +8,7 @@
 %include "fixgcc.ih"
 
 /* add full struct definition */
+#define __GLIBC_USE(X) 0
 #define __USE_MISC
 %include <time.h>
 
