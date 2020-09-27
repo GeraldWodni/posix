@@ -36,14 +36,14 @@ drop 16 end-structure
 EXTERN: "C" void insque( void * __elem, void * __prev );	( __elem __prev -- )
 EXTERN: "C" void remque( void * __elem );	( __elem -- )
 EXTERN: "C" void * hsearch( void * __item, int __action );	( __item __action -- )
-EXTERN: "C" int hcreate( n __nel );	( __nel -- )
+EXTERN: "C" int hcreate( long __nel );	( __nel -- )
 EXTERN: "C" void hdestroy(  );	( -- )
 EXTERN: "C" void * tsearch( void * __key, void * __rootp, void * __compar );	( __key __rootp __compar -- )
 EXTERN: "C" void * tfind( void * __key, void * __rootp, void * __compar );	( __key __rootp __compar -- )
 EXTERN: "C" void * tdelete( void * __key, void * __rootp, void * __compar );	( __key __rootp __compar -- )
 EXTERN: "C" void twalk( void * __root, void * __action );	( __root __action -- )
-EXTERN: "C" void * lfind( void * __key, void * __base, void * __nmemb, n __size, void * __compar );	( __key __base __nmemb __size __compar -- )
-EXTERN: "C" void * lsearch( void * __key, void * __base, void * __nmemb, n __size, void * __compar );	( __key __base __nmemb __size __compar -- )
+EXTERN: "C" void * lfind( void * __key, void * __base, void * __nmemb, long __size, void * __compar );	( __key __base __nmemb __size __compar -- )
+EXTERN: "C" void * lsearch( void * __key, void * __base, void * __nmemb, long __size, void * __compar );	( __key __base __nmemb __size __compar -- )
 
 \ ----===< postfix >===-----
 ( none )

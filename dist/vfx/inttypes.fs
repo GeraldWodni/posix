@@ -22,12 +22,12 @@ begin-structure imaxdiv_t
 drop 16 end-structure
 
 \ ------===< functions >===-------
-EXTERN: "C" n imaxabs( n __n );	( __n -- )
-EXTERN: "C" struct imaxdiv( n __numer, n __denom );	( __numer __denom -- )
-EXTERN: "C" n strtoimax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
-EXTERN: "C" n strtoumax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
-EXTERN: "C" n wcstoimax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
-EXTERN: "C" n wcstoumax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
+EXTERN: "C" long imaxabs( long __n );	( __n -- )
+EXTERN: "C" struct imaxdiv( long __numer, long __denom );	( __numer __denom -- )
+EXTERN: "C" long strtoimax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
+EXTERN: "C" long strtoumax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
+EXTERN: "C" long wcstoimax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
+EXTERN: "C" long wcstoumax( char * __nptr, void * __endptr, int __base );	( __nptr __endptr __base -- )
 
 \ ----===< postfix >===-----
 ( none )

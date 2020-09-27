@@ -38,7 +38,7 @@ drop 112 end-structure
 
 \ ------===< functions >===-------
 EXTERN: "C" int shmctl( int __shmid, int __cmd, void * __buf );	( __shmid __cmd __buf -- )
-EXTERN: "C" int shmget( n __key, n __size, int __shmflg );	( __key __size __shmflg -- )
+EXTERN: "C" int shmget( long __key, long __size, int __shmflg );	( __key __size __shmflg -- )
 EXTERN: "C" void * shmat( int __shmid, void * __shmaddr, int __shmflg );	( __shmid __shmaddr __shmflg -- )
 EXTERN: "C" int shmdt( void * __shmaddr );	( __shmaddr -- )
 

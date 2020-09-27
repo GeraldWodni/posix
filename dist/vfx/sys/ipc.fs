@@ -35,7 +35,7 @@ begin-structure ipc_perm
 drop 48 end-structure
 
 \ ------===< functions >===-------
-EXTERN: "C" n ftok( char * __pathname, int __proj_id );	( __pathname __proj_id -- )
+EXTERN: "C" long ftok( char * __pathname, int __proj_id );	( __pathname __proj_id -- )
 
 \ ----===< postfix >===-----
 ( none )

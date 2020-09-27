@@ -31,9 +31,9 @@ drop 120 end-structure
 
 \ ------===< functions >===-------
 EXTERN: "C" int msgctl( int __msqid, int __cmd, void * __buf );	( __msqid __cmd __buf -- )
-EXTERN: "C" int msgget( n __key, int __msgflg );	( __key __msgflg -- )
-EXTERN: "C" n msgrcv( int __msqid, void * __msgp, n __msgsz, long __msgtyp, int __msgflg );	( __msqid __msgp __msgsz __msgtyp __msgflg -- )
-EXTERN: "C" int msgsnd( int __msqid, void * __msgp, n __msgsz, int __msgflg );	( __msqid __msgp __msgsz __msgflg -- )
+EXTERN: "C" int msgget( long __key, int __msgflg );	( __key __msgflg -- )
+EXTERN: "C" long msgrcv( int __msqid, void * __msgp, long __msgsz, long __msgtyp, int __msgflg );	( __msqid __msgp __msgsz __msgtyp __msgflg -- )
+EXTERN: "C" int msgsnd( int __msqid, void * __msgp, long __msgsz, int __msgflg );	( __msqid __msgp __msgsz __msgflg -- )
 
 \ ----===< postfix >===-----
 ( none )

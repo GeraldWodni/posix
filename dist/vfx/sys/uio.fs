@@ -22,8 +22,8 @@ begin-structure iovec
 drop 16 end-structure
 
 \ ------===< functions >===-------
-EXTERN: "C" n readv( int __fd, void * __iovec, int __count );	( __fd __iovec __count -- )
-EXTERN: "C" n writev( int __fd, void * __iovec, int __count );	( __fd __iovec __count -- )
+EXTERN: "C" long readv( int __fd, void * __iovec, int __count );	( __fd __iovec __count -- )
+EXTERN: "C" long writev( int __fd, void * __iovec, int __count );	( __fd __iovec __count -- )
 
 \ ----===< postfix >===-----
 ( none )

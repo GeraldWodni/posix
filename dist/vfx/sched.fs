@@ -25,14 +25,14 @@ begin-structure sched_param
 drop 4 end-structure
 
 \ ------===< functions >===-------
-EXTERN: "C" int sched_setparam( n __pid, void * __param );	( __pid __param -- )
-EXTERN: "C" int sched_getparam( n __pid, void * __param );	( __pid __param -- )
-EXTERN: "C" int sched_setscheduler( n __pid, int __policy, void * __param );	( __pid __policy __param -- )
-EXTERN: "C" int sched_getscheduler( n __pid );	( __pid -- )
+EXTERN: "C" int sched_setparam( long __pid, void * __param );	( __pid __param -- )
+EXTERN: "C" int sched_getparam( long __pid, void * __param );	( __pid __param -- )
+EXTERN: "C" int sched_setscheduler( long __pid, int __policy, void * __param );	( __pid __policy __param -- )
+EXTERN: "C" int sched_getscheduler( long __pid );	( __pid -- )
 EXTERN: "C" int sched_yield(  );	( -- )
 EXTERN: "C" int sched_get_priority_max( int __algorithm );	( __algorithm -- )
 EXTERN: "C" int sched_get_priority_min( int __algorithm );	( __algorithm -- )
-EXTERN: "C" int sched_rr_get_interval( n __pid, void * __t );	( __pid __t -- )
+EXTERN: "C" int sched_rr_get_interval( long __pid, void * __t );	( __pid __t -- )
 
 \ ----===< postfix >===-----
 ( none )

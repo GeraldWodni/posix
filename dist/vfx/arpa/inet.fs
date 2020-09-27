@@ -14,14 +14,14 @@
 #1	constant _ARPA_INET_H
 
 \ ------===< functions >===-------
-EXTERN: "C" n inet_addr( char * __cp );	( __cp -- )
-EXTERN: "C" n inet_lnaof( n __in );	( __in -- )
-EXTERN: "C" n inet_makeaddr( n __net, n __host );	( __net __host -- )
-EXTERN: "C" n inet_netof( n __in );	( __in -- )
-EXTERN: "C" n inet_network( char * __cp );	( __cp -- )
-EXTERN: "C" void * inet_ntoa( n __in );	( __in -- )
+EXTERN: "C" long inet_addr( char * __cp );	( __cp -- )
+EXTERN: "C" long inet_lnaof( long __in );	( __in -- )
+EXTERN: "C" long inet_makeaddr( long __net, long __host );	( __net __host -- )
+EXTERN: "C" long inet_netof( long __in );	( __in -- )
+EXTERN: "C" long inet_network( char * __cp );	( __cp -- )
+EXTERN: "C" void * inet_ntoa( long __in );	( __in -- )
 EXTERN: "C" int inet_pton( int __af, char * __cp, void * __buf );	( __af __cp __buf -- )
-EXTERN: "C" char * inet_ntop( int __af, void * __cp, void * __buf, n __len );	( __af __cp __buf __len -- )
+EXTERN: "C" char * inet_ntop( int __af, void * __cp, void * __buf, long __len );	( __af __cp __buf __len -- )
 
 \ ----===< postfix >===-----
 ( none )

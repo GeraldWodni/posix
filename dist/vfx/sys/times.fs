@@ -23,7 +23,7 @@ begin-structure tms
 drop 32 end-structure
 
 \ ------===< functions >===-------
-EXTERN: "C" n times( void * __buffer );	( __buffer -- )
+EXTERN: "C" long times( void * __buffer );	( __buffer -- )
 
 \ ----===< postfix >===-----
 ( none )

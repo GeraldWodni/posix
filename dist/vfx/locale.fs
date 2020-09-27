@@ -58,10 +58,10 @@ drop 96 end-structure
 \ ------===< functions >===-------
 EXTERN: "C" void * setlocale( int __category, char * __locale );	( __category __locale -- )
 EXTERN: "C" void * localeconv(  );	( -- )
-EXTERN: "C" n newlocale( int __category_mask, char * __locale, n __base );	( __category_mask __locale __base -- )
-EXTERN: "C" n duplocale( n __dataset );	( __dataset -- )
-EXTERN: "C" void freelocale( n __dataset );	( __dataset -- )
-EXTERN: "C" n uselocale( n __dataset );	( __dataset -- )
+EXTERN: "C" long newlocale( int __category_mask, char * __locale, long __base );	( __category_mask __locale __base -- )
+EXTERN: "C" long duplocale( long __dataset );	( __dataset -- )
+EXTERN: "C" void freelocale( long __dataset );	( __dataset -- )
+EXTERN: "C" long uselocale( long __dataset );	( __dataset -- )
 
 \ ----===< postfix >===-----
 ( none )

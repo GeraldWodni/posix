@@ -14,8 +14,8 @@
 #1	constant _MONETARY_H
 
 \ ------===< functions >===-------
-EXTERN: "C" n strfmon( void * __s, n __maxsize, char * __format, ...  );	( __s __maxsize __format <noname> -- )
-EXTERN: "C" n strfmon_l( void * __s, n __maxsize, n __loc, char * __format, ...  );	( __s __maxsize __loc __format <noname> -- )
+EXTERN: "C" long strfmon( void * __s, long __maxsize, char * __format, ...  );	( __s __maxsize __format <noname> -- )
+EXTERN: "C" long strfmon_l( void * __s, long __maxsize, long __loc, char * __format, ...  );	( __s __maxsize __loc __format <noname> -- )
 
 \ ----===< postfix >===-----
 ( none )

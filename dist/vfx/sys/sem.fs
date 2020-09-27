@@ -43,8 +43,8 @@ drop 104 end-structure
 
 \ ------===< functions >===-------
 EXTERN: "C" int semctl( int __semid, int __semnum, int __cmd, ...  );	( __semid __semnum __cmd <noname> -- )
-EXTERN: "C" int semget( n __key, int __nsems, int __semflg );	( __key __nsems __semflg -- )
-EXTERN: "C" int semop( int __semid, void * __sops, n __nsops );	( __semid __sops __nsops -- )
+EXTERN: "C" int semget( long __key, int __nsems, int __semflg );	( __key __nsems __semflg -- )
+EXTERN: "C" int semop( int __semid, void * __sops, long __nsops );	( __semid __sops __nsops -- )
 
 \ ----===< postfix >===-----
 ( none )

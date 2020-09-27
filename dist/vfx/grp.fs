@@ -26,10 +26,10 @@ drop 32 end-structure
 EXTERN: "C" void setgrent(  );	( -- )
 EXTERN: "C" void endgrent(  );	( -- )
 EXTERN: "C" void * getgrent(  );	( -- )
-EXTERN: "C" void * getgrgid( n __gid );	( __gid -- )
+EXTERN: "C" void * getgrgid( long __gid );	( __gid -- )
 EXTERN: "C" void * getgrnam( char * __name );	( __name -- )
-EXTERN: "C" int getgrgid_r( n __gid, void * __resultbuf, void * __buffer, n __buflen, void * __result );	( __gid __resultbuf __buffer __buflen __result -- )
-EXTERN: "C" int getgrnam_r( char * __name, void * __resultbuf, void * __buffer, n __buflen, void * __result );	( __name __resultbuf __buffer __buflen __result -- )
+EXTERN: "C" int getgrgid_r( long __gid, void * __resultbuf, void * __buffer, long __buflen, void * __result );	( __gid __resultbuf __buffer __buflen __result -- )
+EXTERN: "C" int getgrnam_r( char * __name, void * __resultbuf, void * __buffer, long __buflen, void * __result );	( __name __resultbuf __buffer __buflen __result -- )
 
 \ ----===< postfix >===-----
 ( none )

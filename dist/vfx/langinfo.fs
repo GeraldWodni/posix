@@ -399,8 +399,8 @@
 #786449	constant _NL_NUM
 
 \ ------===< functions >===-------
-EXTERN: "C" void * nl_langinfo( n __item );	( __item -- )
-EXTERN: "C" void * nl_langinfo_l( n __item, n __l );	( __item __l -- )
+EXTERN: "C" void * nl_langinfo( long __item );	( __item -- )
+EXTERN: "C" void * nl_langinfo_l( long __item, long __l );	( __item __l -- )
 
 \ ----===< postfix >===-----
 ( none )

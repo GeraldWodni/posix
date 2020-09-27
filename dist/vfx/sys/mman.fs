@@ -34,16 +34,16 @@
 #4	constant MCL_ONFAULT
 
 \ ------===< functions >===-------
-EXTERN: "C" void * mmap( void * __addr, n __len, int __prot, int __flags, int __fd, n __offset );	( __addr __len __prot __flags __fd __offset -- )
-EXTERN: "C" int munmap( void * __addr, n __len );	( __addr __len -- )
-EXTERN: "C" int mprotect( void * __addr, n __len, int __prot );	( __addr __len __prot -- )
-EXTERN: "C" int msync( void * __addr, n __len, int __flags );	( __addr __len __flags -- )
-EXTERN: "C" int posix_madvise( void * __addr, n __len, int __advice );	( __addr __len __advice -- )
-EXTERN: "C" int mlock( void * __addr, n __len );	( __addr __len -- )
-EXTERN: "C" int munlock( void * __addr, n __len );	( __addr __len -- )
+EXTERN: "C" void * mmap( void * __addr, long __len, int __prot, int __flags, int __fd, long __offset );	( __addr __len __prot __flags __fd __offset -- )
+EXTERN: "C" int munmap( void * __addr, long __len );	( __addr __len -- )
+EXTERN: "C" int mprotect( void * __addr, long __len, int __prot );	( __addr __len __prot -- )
+EXTERN: "C" int msync( void * __addr, long __len, int __flags );	( __addr __len __flags -- )
+EXTERN: "C" int posix_madvise( void * __addr, long __len, int __advice );	( __addr __len __advice -- )
+EXTERN: "C" int mlock( void * __addr, long __len );	( __addr __len -- )
+EXTERN: "C" int munlock( void * __addr, long __len );	( __addr __len -- )
 EXTERN: "C" int mlockall( int __flags );	( __flags -- )
 EXTERN: "C" int munlockall(  );	( -- )
-EXTERN: "C" int shm_open( char * __name, int __oflag, n __mode );	( __name __oflag __mode -- )
+EXTERN: "C" int shm_open( char * __name, int __oflag, long __mode );	( __name __oflag __mode -- )
 EXTERN: "C" int shm_unlink( char * __name );	( __name -- )
 
 \ ----===< postfix >===-----

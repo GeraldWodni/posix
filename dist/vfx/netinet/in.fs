@@ -118,10 +118,10 @@ begin-structure ipv6_mreq
 drop 20 end-structure
 
 \ ------===< functions >===-------
-EXTERN: "C" n ntohl( n __netlong );	( __netlong -- )
-EXTERN: "C" n ntohs( n __netshort );	( __netshort -- )
-EXTERN: "C" n htonl( n __hostlong );	( __hostlong -- )
-EXTERN: "C" n htons( n __hostshort );	( __hostshort -- )
+EXTERN: "C" long ntohl( long __netlong );	( __netlong -- )
+EXTERN: "C" long ntohs( long __netshort );	( __netshort -- )
+EXTERN: "C" long htonl( long __hostlong );	( __hostlong -- )
+EXTERN: "C" long htons( long __hostshort );	( __hostshort -- )
 
 \ ----===< postfix >===-----
 ( none )

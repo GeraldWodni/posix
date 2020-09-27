@@ -52,8 +52,8 @@ drop 16 end-structure
 EXTERN: "C" int getrlimit( int __resource, void * __rlimits );	( __resource __rlimits -- )
 EXTERN: "C" int setrlimit( int __resource, void * __rlimits );	( __resource __rlimits -- )
 EXTERN: "C" int getrusage( int __who, void * __usage );	( __who __usage -- )
-EXTERN: "C" int getpriority( int __which, n __who );	( __which __who -- )
-EXTERN: "C" int setpriority( int __which, n __who, int __prio );	( __which __who __prio -- )
+EXTERN: "C" int getpriority( int __which, long __who );	( __which __who -- )
+EXTERN: "C" int setpriority( int __which, long __who, int __prio );	( __which __who __prio -- )
 
 \ ----===< postfix >===-----
 ( none )
