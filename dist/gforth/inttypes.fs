@@ -25,7 +25,7 @@ drop 16 end-structure
 
 \ ------===< functions >===-------
 c-function imaxabs imaxabs n -- n	( __n -- )
-c-function imaxdiv imaxdiv n n -- struct	( __numer __denom -- )
+c-function imaxdiv imaxdiv n n -- t{*(imaxdiv_t*)}	( __numer __denom -- )
 c-function strtoimax strtoimax s a n -- n	( __nptr __endptr __base -- )
 c-function strtoumax strtoumax s a n -- n	( __nptr __endptr __base -- )
 c-function wcstoimax wcstoimax ws a n -- n	( __nptr __endptr __base -- )

@@ -52,6 +52,7 @@ s" unistd" add-lib
 c-function access access s n -- n	( __name __type -- )
 c-function lseek lseek n n n -- n	( __fd __offset __whence -- )
 c-function close close n -- n	( __fd -- )
+c-function closefrom closefrom n -- void	( __lowfd -- )
 c-function read read n a u -- n	( __fd __buf __nbytes -- )
 c-function write write n a u -- n	( __fd __buf __n -- )
 c-function pread pread n a u n -- n	( __fd __buf __nbytes __offset -- )

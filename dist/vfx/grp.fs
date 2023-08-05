@@ -14,7 +14,7 @@
 #1	constant _GRP_H
 
 \ -------===< structs >===--------
-\ group
+\ struct group
 begin-structure group
 	drop 24 8 +field group-gr_mem
 	drop 0 8 +field group-gr_name

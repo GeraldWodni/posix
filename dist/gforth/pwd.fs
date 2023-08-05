@@ -16,7 +16,7 @@ s" pwd" add-lib
 #1	constant _PWD_H
 
 \ -------===< structs >===--------
-\ passwd
+\ struct passwd
 begin-structure passwd
 	drop 16 4 +field passwd-pw_uid
 	drop 20 4 +field passwd-pw_gid

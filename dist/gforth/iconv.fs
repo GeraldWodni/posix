@@ -16,9 +16,9 @@ s" iconv" add-lib
 #1	constant _ICONV_H
 
 \ ------===< functions >===-------
+c-function iconv_close iconv_close a -- n	( __cd -- )
 c-function iconv_open iconv_open s s -- a	( __tocode __fromcode -- )
 c-function iconv iconv a a a a a -- u	( __cd __inbuf __inbytesleft __outbuf __outbytesleft -- )
-c-function iconv_close iconv_close a -- n	( __cd -- )
 
 \ ----===< postfix >===-----
 end-c-library

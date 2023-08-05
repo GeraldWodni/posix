@@ -24,15 +24,10 @@
 #65535	constant __W_CONTINUED
 #128	constant __WCOREFLAG
 
-\ --------===< enums >===---------
-#0	constant P_ALL
-#1	constant P_PID
-#2	constant P_PGID
-
 \ ------===< functions >===-------
 EXTERN: "C" long wait( void * __stat_loc );	( __stat_loc -- )
 EXTERN: "C" long waitpid( long __pid, void * __stat_loc, int __options );	( __pid __stat_loc __options -- )
-EXTERN: "C" int waitid( int __idtype, long __id, void * __infop, int __options );	( __idtype __id __infop __options -- )
+EXTERN: "C" int waitid( long __idtype, long __id, void * __infop, int __options );	( __idtype __id __infop __options -- )
 
 \ ----===< postfix >===-----
 ( none )

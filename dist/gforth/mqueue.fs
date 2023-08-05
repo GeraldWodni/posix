@@ -16,7 +16,7 @@ s" mqueue" add-lib
 #1	constant _MQUEUE_H
 
 \ -------===< structs >===--------
-\ mq_attr
+\ struct mq_attr
 begin-structure mq_attr
 	drop 0 8 +field mq_attr-mq_flags
 	drop 32 32 +field mq_attr-__pad

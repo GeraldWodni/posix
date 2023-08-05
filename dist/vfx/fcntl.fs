@@ -51,9 +51,6 @@
 #9	constant F_GETOWN
 #10	constant F_SETSIG
 #11	constant F_GETSIG
-#5	constant F_GETLK64
-#6	constant F_SETLK64
-#7	constant F_SETLKW64
 #15	constant F_SETOWN_EX
 #16	constant F_GETOWN_EX
 #17	constant F_GETOWNER_UIDS
@@ -80,27 +77,11 @@
 #1024	constant F_LINUX_SPECIFIC_BASE
 
 \ -------===< structs >===--------
-\ f_owner_ex
+\ struct f_owner_ex
 begin-structure f_owner_ex
 	drop 4 4 +field f_owner_ex-pid
 	drop 0 4 +field f_owner_ex-type
 drop 8 end-structure
-\ flock
-begin-structure flock
-	drop 0 2 +field flock-l_type
-	drop 8 8 +field flock-l_start
-	drop 16 8 +field flock-l_len
-	drop 24 4 +field flock-l_pid
-	drop 2 2 +field flock-l_whence
-drop 32 end-structure
-\ flock64
-begin-structure flock64
-	drop 0 2 +field flock64-l_type
-	drop 8 8 +field flock64-l_start
-	drop 16 8 +field flock64-l_len
-	drop 24 4 +field flock64-l_pid
-	drop 2 2 +field flock64-l_whence
-drop 32 end-structure
 
 \ ------===< functions >===-------
 EXTERN: "C" int fcntl( int __fd, int __cmd, ...  );	( __fd __cmd <noname> -- )

@@ -17,7 +17,7 @@ s" dirent" add-lib
 #1	constant _DIRENT_MATCHES_DIRENT64
 
 \ -------===< structs >===--------
-\ dirent
+\ struct dirent
 begin-structure dirent
 	drop 18 1 +field dirent-d_type
 	drop 8 8 +field dirent-d_off
@@ -27,9 +27,9 @@ begin-structure dirent
 drop 280 end-structure
 
 \ ------===< functions >===-------
+c-function closedir closedir a -- n	( __dirp -- )
 c-function opendir opendir s -- a	( __name -- )
 c-function fdopendir fdopendir n -- a	( __fd -- )
-c-function closedir closedir a -- n	( __dirp -- )
 c-function readdir readdir a -- a	( __dirp -- )
 c-function readdir_r readdir_r a a a -- n	( __dirp __entry __result -- )
 c-function rewinddir rewinddir a -- void	( __dirp -- )

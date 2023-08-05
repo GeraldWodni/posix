@@ -25,13 +25,13 @@ s" sys_sem" add-lib
 #1	constant _SEM_SEMUN_UNDEFINED
 
 \ -------===< structs >===--------
-\ sembuf
+\ struct sembuf
 begin-structure sembuf
 	drop 0 2 +field sembuf-sem_num
 	drop 2 2 +field sembuf-sem_op
 	drop 4 2 +field sembuf-sem_flg
 drop 6 end-structure
-\ semid_ds
+\ struct semid_ds
 begin-structure semid_ds
 	drop 56 8 +field semid_ds-__sem_otime_high
 	drop 72 8 +field semid_ds-__sem_ctime_high

@@ -16,7 +16,7 @@ s" sys_utsname" add-lib
 #1	constant _SYS_UTSNAME_H
 
 \ -------===< structs >===--------
-\ utsname
+\ struct utsname
 begin-structure utsname
 	drop 0 65 +field utsname-sysname
 	drop 65 65 +field utsname-nodename

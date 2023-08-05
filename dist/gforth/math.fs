@@ -9,13 +9,14 @@
 
 \ ----===< prefix >===-----
 c-library math
-s" m" add-lib
+s" math" add-lib
 \c #include <math.h>
 
 \ ----===< int constants >===-----
 #1	constant _MATH_H
 
 \ ---===< float constants >===----
++Inf	fconstant HUGE_VAL
 2.718282e0	fconstant M_E
 1.442695e0	fconstant M_LOG2E
 0.434294e0	fconstant M_LOG10E

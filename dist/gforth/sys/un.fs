@@ -17,7 +17,7 @@ s" sys_un" add-lib
 #128	constant _SS_SIZE
 
 \ -------===< structs >===--------
-\ sockaddr_un
+\ struct sockaddr_un
 begin-structure sockaddr_un
 	drop 2 108 +field sockaddr_un-sun_path
 	drop 0 2 +field sockaddr_un-sun_family

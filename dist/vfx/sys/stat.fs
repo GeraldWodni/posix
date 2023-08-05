@@ -12,12 +12,7 @@
 
 \ ----===< int constants >===-----
 #1	constant _SYS_STAT_H
-#1	constant _STAT_VER
-#0	constant _MKNOD_VER
 #1	constant _BITS_STAT_H
-#0	constant _STAT_VER_KERNEL
-#1	constant _STAT_VER_LINUX
-#0	constant _MKNOD_VER_LINUX
 #61440	constant __S_IFMT
 #16384	constant __S_IFDIR
 #8192	constant __S_IFCHR
@@ -57,12 +52,6 @@ EXTERN: "C" long umask( long __mask );	( __mask -- )
 EXTERN: "C" int mkdir( char * __path, long __mode );	( __path __mode -- )
 EXTERN: "C" int mkfifo( char * __path, long __mode );	( __path __mode -- )
 EXTERN: "C" int futimens( int __fd, void * __times );	( __fd __times -- )
-EXTERN: "C" int __fxstat( int __ver, int __fildes, void * __stat_buf );	( __ver __fildes __stat_buf -- )
-EXTERN: "C" int __xstat( int __ver, char * __filename, void * __stat_buf );	( __ver __filename __stat_buf -- )
-EXTERN: "C" int __lxstat( int __ver, char * __filename, void * __stat_buf );	( __ver __filename __stat_buf -- )
-EXTERN: "C" int __fxstatat( int __ver, int __fildes, char * __filename, void * __stat_buf, int __flag );	( __ver __fildes __filename __stat_buf __flag -- )
-EXTERN: "C" int __xmknod( int __ver, char * __path, long __mode, void * __dev );	( __ver __path __mode __dev -- )
-EXTERN: "C" int __xmknodat( int __ver, int __fd, char * __path, long __mode, void * __dev );	( __ver __fd __path __mode __dev -- )
 
 \ ----===< postfix >===-----
 ( none )

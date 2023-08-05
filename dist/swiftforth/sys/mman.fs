@@ -20,7 +20,14 @@
 #33554432	constant PROT_GROWSUP
 #1	constant MAP_SHARED
 #2	constant MAP_PRIVATE
+#3	constant MAP_SHARED_VALIDATE
+#15	constant MAP_TYPE
 #16	constant MAP_FIXED
+#0	constant MAP_FILE
+#32	constant MAP_ANONYMOUS
+#32	constant MAP_ANON
+#26	constant MAP_HUGE_SHIFT
+#63	constant MAP_HUGE_MASK
 #1	constant MS_ASYNC
 #4	constant MS_SYNC
 #2	constant MS_INVALIDATE

@@ -37,7 +37,7 @@
 #16	constant NI_DGRAM
 
 \ -------===< structs >===--------
-\ hostent
+\ struct hostent
 begin-structure hostent
 	drop 16 4 +field hostent-h_addrtype
 	drop 8 8 +field hostent-h_aliases
@@ -45,20 +45,20 @@ begin-structure hostent
 	drop 20 4 +field hostent-h_length
 	drop 0 8 +field hostent-h_name
 drop 32 end-structure
-\ servent
+\ struct servent
 begin-structure servent
 	drop 0 8 +field servent-s_name
 	drop 8 8 +field servent-s_aliases
 	drop 16 4 +field servent-s_port
 	drop 24 8 +field servent-s_proto
 drop 32 end-structure
-\ protoent
+\ struct protoent
 begin-structure protoent
 	drop 16 4 +field protoent-p_proto
 	drop 0 8 +field protoent-p_name
 	drop 8 8 +field protoent-p_aliases
 drop 24 end-structure
-\ addrinfo
+\ struct addrinfo
 begin-structure addrinfo
 	drop 0 4 +field addrinfo-ai_flags
 	drop 32 8 +field addrinfo-ai_canonname

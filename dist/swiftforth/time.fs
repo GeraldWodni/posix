@@ -28,7 +28,7 @@
 #1	constant __struct_tm_defined
 
 \ -------===< structs >===--------
-\ tm
+\ struct tm
 begin-structure tm
 	drop 12 4 +field tm-tm_mday
 	drop 16 4 +field tm-tm_mon

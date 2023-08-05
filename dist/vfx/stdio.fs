@@ -24,9 +24,9 @@
 \ ------===< functions >===-------
 EXTERN: "C" int remove( char * __filename );	( __filename -- )
 EXTERN: "C" int rename( char * __old, char * __new );	( __old __new -- )
-EXTERN: "C" void * tmpfile(  );	( -- )
-EXTERN: "C" void * tmpnam( void * __s );	( __s -- )
 EXTERN: "C" int fclose( void * __stream );	( __stream -- )
+EXTERN: "C" void * tmpfile(  );	( -- )
+EXTERN: "C" void * tmpnam( void *  );	( <noname> -- )
 EXTERN: "C" int fflush( void * __stream );	( __stream -- )
 EXTERN: "C" void * fopen( char * __filename, char * __modes );	( __filename __modes -- )
 EXTERN: "C" void * freopen( char * __filename, char * __modes, void * __stream );	( __filename __modes __stream -- )

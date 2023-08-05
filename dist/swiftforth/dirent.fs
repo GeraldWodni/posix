@@ -15,7 +15,7 @@
 #1	constant _DIRENT_MATCHES_DIRENT64
 
 \ -------===< structs >===--------
-\ dirent
+\ struct dirent
 begin-structure dirent
 	drop 18 1 +field dirent-d_type
 	drop 8 8 +field dirent-d_off
@@ -25,9 +25,9 @@ begin-structure dirent
 drop 280 end-structure
 
 \ ------===< functions >===-------
+FUNCTION: closedir ( __dirp -- n )	( __dirp -- )
 FUNCTION: opendir ( __name -- a )	( __name -- )
 FUNCTION: fdopendir ( __fd -- a )	( __fd -- )
-FUNCTION: closedir ( __dirp -- n )	( __dirp -- )
 FUNCTION: readdir ( __dirp -- a )	( __dirp -- )
 FUNCTION: readdir_r ( __dirp __entry __result -- n )	( __dirp __entry __result -- )
 FUNCTION: rewinddir ( __dirp -- void )	( __dirp -- )

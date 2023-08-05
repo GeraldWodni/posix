@@ -50,6 +50,7 @@
 EXTERN: "C" int access( char * __name, int __type );	( __name __type -- )
 EXTERN: "C" long lseek( int __fd, long __offset, int __whence );	( __fd __offset __whence -- )
 EXTERN: "C" int close( int __fd );	( __fd -- )
+EXTERN: "C" void closefrom( int __lowfd );	( __lowfd -- )
 EXTERN: "C" long read( int __fd, void * __buf, long __nbytes );	( __fd __buf __nbytes -- )
 EXTERN: "C" long write( int __fd, void * __buf, long __n );	( __fd __buf __n -- )
 EXTERN: "C" long pread( int __fd, void * __buf, long __nbytes, long __offset );	( __fd __buf __nbytes __offset -- )

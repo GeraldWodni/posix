@@ -79,7 +79,7 @@ drop 24 end-structure
 
 \ ------===< functions >===-------
 EXTERN: "C" void * __sysv_signal( int __sig, void * __handler );	( __sig __handler -- )
-EXTERN: "C" int kill( n __pid, int __sig );	( __pid __sig -- )
+EXTERN: "C" int kill( long __pid, int __sig );	( __pid __sig -- )
 EXTERN: "C" int raise( int __sig );	( __sig -- )
 EXTERN: "C" void psignal( int __sig, char * __s );	( __sig __s -- )
 EXTERN: "C" void psiginfo( void * __pinfo, char * __s );	( __pinfo __s -- )
@@ -94,7 +94,7 @@ EXTERN: "C" int sigaction( int __sig, void * __act, void * __oact );	( __sig __a
 EXTERN: "C" int sigpending( void * __set );	( __set -- )
 EXTERN: "C" int sigwaitinfo( void * __set, void * __info );	( __set __info -- )
 EXTERN: "C" int sigtimedwait( void * __set, void * __info, void * __timeout );	( __set __info __timeout -- )
-EXTERN: "C" int sigqueue( n __pid, int __sig, n __val );	( __pid __sig __val -- )
+EXTERN: "C" int sigqueue( long __pid, int __sig, long __val );	( __pid __sig __val -- )
 EXTERN: "C" int __libc_current_sigrtmin(  );	( -- )
 EXTERN: "C" int __libc_current_sigrtmax(  );	( -- )
 

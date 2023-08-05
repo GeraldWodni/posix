@@ -19,7 +19,7 @@
 #1	constant _BITS_TYPES_STRUCT_SCHED_PARAM
 
 \ -------===< structs >===--------
-\ sched_param
+\ struct sched_param
 begin-structure sched_param
 	drop 0 4 +field sched_param-sched_priority
 drop 4 end-structure

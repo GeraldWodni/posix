@@ -22,6 +22,9 @@
 #define __THROW
 #define __THROWNL
 #define __attr_access(X)
+#define __attr_access_none(X)
+#define __attr_dealloc(X,Y)
+#define __attr_dealloc_free
 #define __attribute__(X)
 #define __attribute_alloc_size__(X);
 #define __attribute_const__
@@ -33,6 +36,7 @@
 #define __attribute_pure__
 #define __attribute_warn_unused_result__
 #define __extension__
+#define __fortified_attr_access(X,Y,Z)
 #define __nonnull(X)
 #define __noreturn__
 #define __restrict

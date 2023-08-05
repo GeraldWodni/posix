@@ -27,12 +27,12 @@ s" utmpx" add-lib
 #8	constant DEAD_PROCESS
 
 \ -------===< structs >===--------
-\ __exit_status
+\ struct __exit_status
 begin-structure __exit_status
 	drop 2 2 +field __exit_status-__e_exit
 	drop 0 2 +field __exit_status-__e_termination
 drop 4 end-structure
-\ utmpx
+\ struct utmpx
 begin-structure utmpx
 	drop 364 20 +field utmpx-__glibc_reserved
 	drop 4 4 +field utmpx-ut_pid

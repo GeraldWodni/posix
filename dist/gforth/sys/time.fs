@@ -21,7 +21,7 @@ s" sys_time" add-lib
 #2	constant ITIMER_PROF
 
 \ -------===< structs >===--------
-\ itimerval
+\ struct itimerval
 begin-structure itimerval
 	drop 16 16 +field itimerval-it_value
 	drop 0 16 +field itimerval-it_interval

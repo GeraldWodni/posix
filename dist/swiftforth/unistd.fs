@@ -50,6 +50,7 @@
 FUNCTION: access ( __name __type -- n )	( __name __type -- )
 FUNCTION: lseek ( __fd __offset __whence -- n )	( __fd __offset __whence -- )
 FUNCTION: close ( __fd -- n )	( __fd -- )
+FUNCTION: closefrom ( __lowfd -- void )	( __lowfd -- )
 FUNCTION: read ( __fd __buf __nbytes -- n )	( __fd __buf __nbytes -- )
 FUNCTION: write ( __fd __buf __n -- n )	( __fd __buf __n -- )
 FUNCTION: pread ( __fd __buf __nbytes __offset -- n )	( __fd __buf __nbytes __offset -- )

@@ -14,9 +14,9 @@
 #1	constant _ICONV_H
 
 \ ------===< functions >===-------
+FUNCTION: iconv_close ( __cd -- n )	( __cd -- )
 FUNCTION: iconv_open ( __tocode __fromcode -- a )	( __tocode __fromcode -- )
 FUNCTION: iconv ( __cd __inbuf __inbytesleft __outbuf __outbytesleft -- u )	( __cd __inbuf __inbytesleft __outbuf __outbytesleft -- )
-FUNCTION: iconv_close ( __cd -- n )	( __cd -- )
 
 \ ----===< postfix >===-----
 ( none )

@@ -24,7 +24,7 @@ s" sys_shm" add-lib
 #12	constant SHM_UNLOCK
 
 \ -------===< structs >===--------
-\ shmid_ds
+\ struct shmid_ds
 begin-structure shmid_ds
 	drop 96 8 +field shmid_ds-__glibc_reserved5
 	drop 64 8 +field shmid_ds-shm_dtime

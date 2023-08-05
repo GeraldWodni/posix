@@ -51,6 +51,7 @@ s" netinet_in" add-lib
 #98	constant IPPROTO_ENCAP
 #103	constant IPPROTO_PIM
 #108	constant IPPROTO_COMP
+#115	constant IPPROTO_L2TP
 #132	constant IPPROTO_SCTP
 #136	constant IPPROTO_UDPLITE
 #137	constant IPPROTO_MPLS
@@ -93,11 +94,11 @@ s" netinet_in" add-lib
 #5000	constant IPPORT_USERRESERVED
 
 \ -------===< structs >===--------
-\ in_addr
+\ struct in_addr
 begin-structure in_addr
 	drop 0 4 +field in_addr-s_addr
 drop 4 end-structure
-\ in6_addr
+\ struct in6_addr
 begin-structure in6_addr
 	drop 0 16 +field in6_addr-__in6_u
 drop 16 end-structure
@@ -107,13 +108,13 @@ begin-structure in6_addr___in6_u
 	drop 0 16 +field in6_addr___in6_u-__u6_addr8
 	drop 0 16 +field in6_addr___in6_u-__u6_addr32
 drop 16 end-structure
-\ __SOCKADDR_COMMON
+\ struct sockaddr_in
 begin-structure __SOCKADDR_COMMON
 drop 16 end-structure
-\ __SOCKADDR_COMMON
+\ struct sockaddr_in6
 begin-structure __SOCKADDR_COMMON
 drop 28 end-structure
-\ ipv6_mreq
+\ struct ipv6_mreq
 begin-structure ipv6_mreq
 	drop 16 4 +field ipv6_mreq-ipv6mr_interface
 	drop 0 16 +field ipv6_mreq-ipv6mr_multiaddr

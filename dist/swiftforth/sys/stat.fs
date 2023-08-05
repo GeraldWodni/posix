@@ -12,12 +12,7 @@
 
 \ ----===< int constants >===-----
 #1	constant _SYS_STAT_H
-#1	constant _STAT_VER
-#0	constant _MKNOD_VER
 #1	constant _BITS_STAT_H
-#0	constant _STAT_VER_KERNEL
-#1	constant _STAT_VER_LINUX
-#0	constant _MKNOD_VER_LINUX
 #61440	constant __S_IFMT
 #16384	constant __S_IFDIR
 #8192	constant __S_IFCHR
@@ -57,12 +52,6 @@ FUNCTION: umask ( __mask -- n )	( __mask -- )
 FUNCTION: mkdir ( __path __mode -- n )	( __path __mode -- )
 FUNCTION: mkfifo ( __path __mode -- n )	( __path __mode -- )
 FUNCTION: futimens ( __fd __times -- n )	( __fd __times -- )
-FUNCTION: __fxstat ( __ver __fildes __stat_buf -- n )	( __ver __fildes __stat_buf -- )
-FUNCTION: __xstat ( __ver __filename __stat_buf -- n )	( __ver __filename __stat_buf -- )
-FUNCTION: __lxstat ( __ver __filename __stat_buf -- n )	( __ver __filename __stat_buf -- )
-FUNCTION: __fxstatat ( __ver __fildes __filename __stat_buf __flag -- n )	( __ver __fildes __filename __stat_buf __flag -- )
-FUNCTION: __xmknod ( __ver __path __mode __dev -- n )	( __ver __path __mode __dev -- )
-FUNCTION: __xmknodat ( __ver __fd __path __mode __dev -- n )	( __ver __fd __path __mode __dev -- )
 
 \ ----===< postfix >===-----
 ( none )

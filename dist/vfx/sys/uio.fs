@@ -15,7 +15,7 @@
 #1	constant __iovec_defined
 
 \ -------===< structs >===--------
-\ iovec
+\ struct iovec
 begin-structure iovec
 	drop 0 8 +field iovec-iov_base
 	drop 8 8 +field iovec-iov_len

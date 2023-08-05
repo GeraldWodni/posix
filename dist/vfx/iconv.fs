@@ -14,9 +14,9 @@
 #1	constant _ICONV_H
 
 \ ------===< functions >===-------
+EXTERN: "C" int iconv_close( void * __cd );	( __cd -- )
 EXTERN: "C" void * iconv_open( char * __tocode, char * __fromcode );	( __tocode __fromcode -- )
 EXTERN: "C" long iconv( void * __cd, void * __inbuf, void * __inbytesleft, void * __outbuf, void * __outbytesleft );	( __cd __inbuf __inbytesleft __outbuf __outbytesleft -- )
-EXTERN: "C" int iconv_close( void * __cd );	( __cd -- )
 
 \ ----===< postfix >===-----
 ( none )

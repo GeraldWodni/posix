@@ -24,9 +24,9 @@
 \ ------===< functions >===-------
 FUNCTION: remove ( __filename -- n )	( __filename -- )
 FUNCTION: rename ( __old __new -- n )	( __old __new -- )
-FUNCTION: tmpfile (  -- a )	( -- )
-FUNCTION: tmpnam ( __s -- a )	( __s -- )
 FUNCTION: fclose ( __stream -- n )	( __stream -- )
+FUNCTION: tmpfile (  -- a )	( -- )
+FUNCTION: tmpnam (  -- a )	( <noname> -- )
 FUNCTION: fflush ( __stream -- n )	( __stream -- )
 FUNCTION: fopen ( __filename __modes -- a )	( __filename __modes -- )
 FUNCTION: freopen ( __filename __modes __stream -- a )	( __filename __modes __stream -- )

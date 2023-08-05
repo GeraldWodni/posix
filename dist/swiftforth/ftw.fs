@@ -27,7 +27,7 @@
 #8	constant FTW_DEPTH
 
 \ -------===< structs >===--------
-\ FTW
+\ struct FTW
 begin-structure FTW
 	drop 4 4 +field FTW-level
 	drop 0 4 +field FTW-base

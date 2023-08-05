@@ -15,7 +15,7 @@
 #16	constant IF_NAMESIZE
 
 \ -------===< structs >===--------
-\ if_nameindex
+\ struct if_nameindex
 begin-structure if_nameindex
 	drop 0 4 +field if_nameindex-if_index
 	drop 8 8 +field if_nameindex-if_name

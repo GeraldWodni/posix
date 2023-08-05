@@ -15,7 +15,7 @@
 #1	constant _DIRENT_MATCHES_DIRENT64
 
 \ -------===< structs >===--------
-\ dirent
+\ struct dirent
 begin-structure dirent
 	drop 18 1 +field dirent-d_type
 	drop 8 8 +field dirent-d_off
@@ -25,9 +25,9 @@ begin-structure dirent
 drop 280 end-structure
 
 \ ------===< functions >===-------
+EXTERN: "C" int closedir( void * __dirp );	( __dirp -- )
 EXTERN: "C" void * opendir( char * __name );	( __name -- )
 EXTERN: "C" void * fdopendir( int __fd );	( __fd -- )
-EXTERN: "C" int closedir( void * __dirp );	( __dirp -- )
 EXTERN: "C" void * readdir( void * __dirp );	( __dirp -- )
 EXTERN: "C" int readdir_r( void * __dirp, void * __entry, void * __result );	( __dirp __entry __result -- )
 EXTERN: "C" void rewinddir( void * __dirp );	( __dirp -- )

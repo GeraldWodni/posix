@@ -14,12 +14,7 @@ s" sys_stat" add-lib
 
 \ ----===< int constants >===-----
 #1	constant _SYS_STAT_H
-#1	constant _STAT_VER
-#0	constant _MKNOD_VER
 #1	constant _BITS_STAT_H
-#0	constant _STAT_VER_KERNEL
-#1	constant _STAT_VER_LINUX
-#0	constant _MKNOD_VER_LINUX
 #61440	constant __S_IFMT
 #16384	constant __S_IFDIR
 #8192	constant __S_IFCHR
@@ -59,12 +54,6 @@ c-function umask umask n -- n	( __mask -- )
 c-function mkdir mkdir s n -- n	( __path __mode -- )
 c-function mkfifo mkfifo s n -- n	( __path __mode -- )
 c-function futimens futimens n a -- n	( __fd __times -- )
-c-function __fxstat __fxstat n n a -- n	( __ver __fildes __stat_buf -- )
-c-function __xstat __xstat n s a -- n	( __ver __filename __stat_buf -- )
-c-function __lxstat __lxstat n s a -- n	( __ver __filename __stat_buf -- )
-c-function __fxstatat __fxstatat n n s a n -- n	( __ver __fildes __filename __stat_buf __flag -- )
-c-function __xmknod __xmknod n s n a -- n	( __ver __path __mode __dev -- )
-c-function __xmknodat __xmknodat n n s n a -- n	( __ver __fd __path __mode __dev -- )
 
 \ ----===< postfix >===-----
 end-c-library

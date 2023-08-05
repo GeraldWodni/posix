@@ -29,7 +29,7 @@ s" locale" add-lib
 #12	constant LC_IDENTIFICATION
 
 \ -------===< structs >===--------
-\ lconv
+\ struct lconv
 begin-structure lconv
 	drop 32 8 +field lconv-currency_symbol
 	drop 24 8 +field lconv-int_curr_symbol

@@ -14,7 +14,7 @@
 #4096	constant MSG_NOERROR
 
 \ -------===< structs >===--------
-\ msqid_ds
+\ struct msqid_ds
 begin-structure msqid_ds
 	drop 100 4 +field msqid_ds-msg_lrpid
 	drop 112 8 +field msqid_ds-__glibc_reserved5

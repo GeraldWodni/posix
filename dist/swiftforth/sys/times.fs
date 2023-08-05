@@ -14,7 +14,7 @@
 #1	constant _SYS_TIMES_H
 
 \ -------===< structs >===--------
-\ tms
+\ struct tms
 begin-structure tms
 	drop 16 8 +field tms-tms_cutime
 	drop 8 8 +field tms-tms_stime

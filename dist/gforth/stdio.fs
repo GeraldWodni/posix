@@ -26,9 +26,9 @@ s" stdio" add-lib
 \ ------===< functions >===-------
 c-function remove remove s -- n	( __filename -- )
 c-function rename rename s s -- n	( __old __new -- )
-c-function tmpfile tmpfile  -- a	( -- )
-c-function tmpnam tmpnam a -- a	( __s -- )
 c-function fclose fclose a -- n	( __stream -- )
+c-function tmpfile tmpfile  -- a	( -- )
+c-function tmpnam tmpnam a -- a	( <noname> -- )
 c-function fflush fflush a -- n	( __stream -- )
 c-function fopen fopen s s -- a	( __filename __modes -- )
 c-function freopen freopen s s a -- a	( __filename __modes __stream -- )

@@ -26,11 +26,6 @@ s" sys_wait" add-lib
 #65535	constant __W_CONTINUED
 #128	constant __WCOREFLAG
 
-\ --------===< enums >===---------
-#0	constant P_ALL
-#1	constant P_PID
-#2	constant P_PGID
-
 \ ------===< functions >===-------
 c-function wait wait a -- n	( __stat_loc -- )
 c-function waitpid waitpid n a n -- n	( __pid __stat_loc __options -- )

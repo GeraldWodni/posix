@@ -24,7 +24,7 @@
 #1	constant LIO_NOWAIT
 
 \ -------===< structs >===--------
-\ aiocb
+\ struct aiocb
 begin-structure aiocb
 	drop 32 64 +field aiocb-aio_sigevent
 	drop 8 4 +field aiocb-aio_reqprio

@@ -10,14 +10,6 @@
 \ ----===< prefix >===-----
 ( none )
 
-\ -------===< structs >===--------
-\ __jmp_buf_tag
-begin-structure __jmp_buf_tag
-	drop 64 4 +field __jmp_buf_tag-__mask_was_saved
-	drop 0 64 +field __jmp_buf_tag-__jmpbuf
-	drop 72 128 +field __jmp_buf_tag-__saved_mask
-drop 200 end-structure
-
 \ ------===< functions >===-------
 FUNCTION: setjmp ( __env -- n )	( __env -- )
 FUNCTION: sigsetjmp ( __env __savemask -- n )	( __env __savemask -- )

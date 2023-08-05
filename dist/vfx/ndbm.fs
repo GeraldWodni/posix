@@ -23,6 +23,9 @@
 #256	constant GDBM_CLOEXEC
 #512	constant GDBM_BSEXACT
 #1024	constant GDBM_CLOERROR
+#2048	constant GDBM_XVERIFY
+#4096	constant GDBM_PREREAD
+#8192	constant GDBM_NUMSYNC
 #0	constant GDBM_INSERT
 #1	constant GDBM_REPLACE
 #1	constant GDBM_SETCACHESIZE
@@ -45,9 +48,15 @@
 #14	constant GDBM_GETMAXMAPSIZE
 #15	constant GDBM_GETDBNAME
 #16	constant GDBM_GETBLOCKSIZE
+#17	constant GDBM_GETDBFORMAT
+#18	constant GDBM_GETDIRDEPTH
+#19	constant GDBM_GETBUCKETSIZE
+#20	constant GDBM_GETCACHEAUTO
+#21	constant GDBM_SETCACHEAUTO
+#0	constant GDBM_CACHE_AUTO
 #1	constant GDBM_VERSION_MAJOR
-#18	constant GDBM_VERSION_MINOR
-#1	constant GDBM_VERSION_PATCH
+#23	constant GDBM_VERSION_MINOR
+#0	constant GDBM_VERSION_PATCH
 #0	constant GDBM_RCVR_DEFAULT
 #1	constant GDBM_RCVR_ERRFUN
 #2	constant GDBM_RCVR_MAX_FAILED_KEYS
@@ -59,6 +68,14 @@
 #1	constant GDBM_DUMP_FMT_ASCII
 #1	constant GDBM_META_MASK_MODE
 #2	constant GDBM_META_MASK_OWNER
+#0	constant _GDBM_MIN_ERRNO
+
+\ --------===< enums >===---------
+#0	constant GDBM_SNAPSHOT_OK
+#1	constant GDBM_SNAPSHOT_BAD
+#2	constant GDBM_SNAPSHOT_ERR
+#3	constant GDBM_SNAPSHOT_SAME
+#4	constant GDBM_SNAPSHOT_SUSPICIOUS
 #0	constant GDBM_NO_ERROR
 #1	constant GDBM_MALLOC_ERROR
 #2	constant GDBM_BLOCK_SIZE_ERROR
@@ -77,8 +94,10 @@
 #15	constant GDBM_ITEM_NOT_FOUND
 #16	constant GDBM_REORGANIZE_FAILED
 #17	constant GDBM_CANNOT_REPLACE
+#18	constant GDBM_MALFORMED_DATA
 #18	constant GDBM_ILLEGAL_DATA
 #19	constant GDBM_OPT_ALREADY_SET
+#20	constant GDBM_OPT_BADVAL
 #20	constant GDBM_OPT_ILLEGAL
 #21	constant GDBM_BYTE_SWAPPED
 #22	constant GDBM_BAD_FILE_OFFSET
@@ -99,9 +118,11 @@
 #37	constant GDBM_FILE_CLOSE_ERROR
 #38	constant GDBM_FILE_SYNC_ERROR
 #39	constant GDBM_FILE_TRUNCATE_ERROR
-#0	constant _GDBM_MIN_ERRNO
-#39	constant _GDBM_MAX_ERRNO
-#14	constant GDBM_UNKNOWN_UPDATE
+#40	constant GDBM_BUCKET_CACHE_CORRUPTED
+#41	constant GDBM_BAD_HASH_ENTRY
+#42	constant GDBM_ERR_SNAPSHOT_CLONE
+#43	constant GDBM_ERR_REALPATH
+#44	constant GDBM_ERR_USAGE
 
 \ -------===< structs >===--------
 \ DBM
@@ -117,9 +138,14 @@ begin-structure datum
 	drop 8 4 +field datum-dsize
 	drop 0 8 +field datum-dptr
 drop 16 end-structure
-\ gdbm_recovery
+\ struct gdbm_recovery_s
 begin-structure gdbm_recovery
 drop 88 end-structure
+\ struct gdbm_cache_stat
+begin-structure gdbm_cache_stat
+	drop 0 8 +field gdbm_cache_stat-adr
+	drop 8 8 +field gdbm_cache_stat-hits
+drop 16 end-structure
 
 \ --===< function pointers >===---
 	( data fmt <noname> -- )
@@ -147,6 +173,9 @@ EXTERN: "C" struct gdbm_firstkey( void *  );	( <noname> -- )
 EXTERN: "C" struct gdbm_nextkey( void * , void *  );	( <noname> <noname> -- )
 EXTERN: "C" int gdbm_reorganize( void *  );	( <noname> -- )
 EXTERN: "C" int gdbm_sync( void *  );	( <noname> -- )
+EXTERN: "C" int gdbm_failure_atomic( void * , char * , char *  );	( <noname> <noname> <noname> -- )
+EXTERN: "C" int gdbm_convert( void * dbf, int flag );	( dbf flag -- )
+EXTERN: "C" int gdbm_latest_snapshot( char * , char * , void *  );	( <noname> <noname> <noname> -- )
 EXTERN: "C" int gdbm_exists( void * , void *  );	( <noname> <noname> -- )
 EXTERN: "C" int gdbm_setopt( void * , int , void * , int  );	( <noname> <noname> <noname> <noname> -- )
 EXTERN: "C" int gdbm_fdesc( void *  );	( <noname> -- )
@@ -155,6 +184,8 @@ EXTERN: "C" int gdbm_export_to_file( void * dbf, void * fp );	( dbf fp -- )
 EXTERN: "C" int gdbm_import( void * , char * , int  );	( <noname> <noname> <noname> -- )
 EXTERN: "C" int gdbm_import_from_file( void * dbf, void * fp, int flag );	( dbf fp flag -- )
 EXTERN: "C" int gdbm_count( void * dbf, void * pcount );	( dbf pcount -- )
+EXTERN: "C" int gdbm_bucket_count( void * dbf, void * pcount );	( dbf pcount -- )
+EXTERN: "C" int gdbm_avail_verify( void * dbf );	( dbf -- )
 EXTERN: "C" int gdbm_recover( void * dbf, void * rcvr, int flags );	( dbf rcvr flags -- )
 EXTERN: "C" int gdbm_dump( void * , char * , int fmt, int open_flags, int mode );	( <noname> <noname> fmt open_flags mode -- )
 EXTERN: "C" int gdbm_dump_to_file( void * , void * , int fmt );	( <noname> <noname> fmt -- )
@@ -171,6 +202,7 @@ EXTERN: "C" int gdbm_check_syserr( int n );	( n -- )
 EXTERN: "C" char * gdbm_strerror( int  );	( <noname> -- )
 EXTERN: "C" char * gdbm_db_strerror( void * dbf );	( dbf -- )
 EXTERN: "C" int gdbm_version_cmp( void * a, void * b );	( a b -- )
+EXTERN: "C" void gdbm_get_cache_stats( void * dbf, void * access_count, void * cache_hits, void * cache_count, void * bstat, long nstat );	( dbf access_count cache_hits cache_count bstat nstat -- )
 
 \ ----===< postfix >===-----
 ( none )

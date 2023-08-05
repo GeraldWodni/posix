@@ -24,11 +24,6 @@
 #65535	constant __W_CONTINUED
 #128	constant __WCOREFLAG
 
-\ --------===< enums >===---------
-#0	constant P_ALL
-#1	constant P_PID
-#2	constant P_PGID
-
 \ ------===< functions >===-------
 FUNCTION: wait ( __stat_loc -- n )	( __stat_loc -- )
 FUNCTION: waitpid ( __pid __stat_loc __options -- n )	( __pid __stat_loc __options -- )

@@ -42,7 +42,7 @@
 #2	constant PRIO_USER
 
 \ -------===< structs >===--------
-\ rlimit
+\ struct rlimit
 begin-structure rlimit
 	drop 0 8 +field rlimit-rlim_cur
 	drop 8 8 +field rlimit-rlim_max

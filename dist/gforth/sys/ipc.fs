@@ -22,7 +22,7 @@ s" sys_ipc" add-lib
 #2	constant IPC_STAT
 
 \ -------===< structs >===--------
-\ ipc_perm
+\ struct ipc_perm
 begin-structure ipc_perm
 	drop 26 2 +field ipc_perm-__pad2
 	drop 0 4 +field ipc_perm-__key

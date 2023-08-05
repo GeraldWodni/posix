@@ -115,6 +115,7 @@
 #512	constant PARODD
 #1024	constant HUPCL
 #2048	constant CLOCAL
+#536870912	constant ADDRB
 #1	constant ISIG
 #2	constant ICANON
 #4	constant XCASE
@@ -136,7 +137,7 @@
 #2	constant TCSAFLUSH
 
 \ -------===< structs >===--------
-\ termios
+\ struct termios
 begin-structure termios
 	drop 12 4 +field termios-c_lflag
 	drop 16 1 +field termios-c_line

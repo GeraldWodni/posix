@@ -24,7 +24,7 @@
 #32	constant POLLNVAL
 
 \ -------===< structs >===--------
-\ pollfd
+\ struct pollfd
 begin-structure pollfd
 	drop 0 4 +field pollfd-fd
 	drop 4 2 +field pollfd-events

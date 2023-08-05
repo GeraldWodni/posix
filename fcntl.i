@@ -12,4 +12,5 @@
 %include <fcntl.h>
 
 /* GNU seperates the constants into extra files */
+#define HAVE_ARCH_STRUCT_FLOCK
 %include <asm-generic/fcntl.h>

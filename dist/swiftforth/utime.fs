@@ -14,7 +14,7 @@
 #1	constant _UTIME_H
 
 \ -------===< structs >===--------
-\ utimbuf
+\ struct utimbuf
 begin-structure utimbuf
 	drop 0 8 +field utimbuf-actime
 	drop 8 8 +field utimbuf-modtime

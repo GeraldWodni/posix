@@ -18,6 +18,7 @@ EXTERN: "C" void * memcpy( void * __dest, void * __src, long __n );	( __dest __s
 EXTERN: "C" void * memmove( void * __dest, void * __src, long __n );	( __dest __src __n -- )
 EXTERN: "C" void * memset( void * __s, int __c, long __n );	( __s __c __n -- )
 EXTERN: "C" int memcmp( void * __s1, void * __s2, long __n );	( __s1 __s2 __n -- )
+EXTERN: "C" int __memcmpeq( void * __s1, void * __s2, long __n );	( __s1 __s2 __n -- )
 EXTERN: "C" void * memchr( void * __s, int __c, long __n );	( __s __c __n -- )
 EXTERN: "C" void * strcpy( void * __dest, char * __src );	( __dest __src -- )
 EXTERN: "C" void * strncpy( void * __dest, char * __src, long __n );	( __dest __src __n -- )

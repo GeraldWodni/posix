@@ -48,24 +48,24 @@ s" pthread" add-lib
 #1	constant PTHREAD_CANCEL_ASYNCHRONOUS
 
 \ -------===< structs >===--------
-\ _pthread_cleanup_buffer
+\ struct _pthread_cleanup_buffer
 begin-structure _pthread_cleanup_buffer
 	drop 0 8 +field _pthread_cleanup_buffer-__routine
 	drop 24 8 +field _pthread_cleanup_buffer-__prev
 	drop 8 8 +field _pthread_cleanup_buffer-__arg
 	drop 16 4 +field _pthread_cleanup_buffer-__canceltype
 drop 32 end-structure
+\ struct __cancel_jmp_buf_tag
+begin-structure __cancel_jmp_buf_tag
+	drop 64 4 +field __cancel_jmp_buf_tag-__mask_was_saved
+	drop 0 64 +field __cancel_jmp_buf_tag-__cancel_jmp_buf
+drop 72 end-structure
 \ __pthread_unwind_buf_t
 begin-structure __pthread_unwind_buf_t
 	drop 72 32 +field __pthread_unwind_buf_t-__pad
 	drop 0 72 +field __pthread_unwind_buf_t-__cancel_jmp_buf
 drop 104 end-structure
-\ __pthread_unwind_buf_t___cancel_jmp_buf
-begin-structure __pthread_unwind_buf_t___cancel_jmp_buf
-	drop 64 4 +field __pthread_unwind_buf_t___cancel_jmp_buf-__mask_was_saved
-	drop 0 64 +field __pthread_unwind_buf_t___cancel_jmp_buf-__cancel_jmp_buf
-drop 72 end-structure
-\ __pthread_cleanup_frame
+\ struct __pthread_cleanup_frame
 begin-structure __pthread_cleanup_frame
 	drop 0 8 +field __pthread_cleanup_frame-__cancel_routine
 	drop 8 8 +field __pthread_cleanup_frame-__cancel_arg

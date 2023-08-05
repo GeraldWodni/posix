@@ -61,7 +61,8 @@ s" sys_socket" add-lib
 #42	constant PF_QIPCRTR
 #43	constant PF_SMC
 #44	constant PF_XDP
-#45	constant PF_MAX
+#45	constant PF_MCTP
+#46	constant PF_MAX
 #0	constant AF_UNSPEC
 #1	constant AF_LOCAL
 #1	constant AF_UNIX
@@ -110,7 +111,8 @@ s" sys_socket" add-lib
 #42	constant AF_QIPCRTR
 #43	constant AF_SMC
 #44	constant AF_XDP
-#45	constant AF_MAX
+#45	constant AF_MCTP
+#46	constant AF_MAX
 #255	constant SOL_RAW
 #261	constant SOL_DECNET
 #262	constant SOL_X25
@@ -135,6 +137,9 @@ s" sys_socket" add-lib
 #281	constant SOL_KCM
 #282	constant SOL_TLS
 #283	constant SOL_XDP
+#284	constant SOL_MPTCP
+#285	constant SOL_MCTP
+#286	constant SOL_SMC
 #4096	constant SOMAXCONN
 #1	constant SO_DEBUG
 #1	constant SOL_SOCKET
@@ -209,6 +214,13 @@ s" sys_socket" add-lib
 #66	constant SO_RCVTIMEO_NEW
 #67	constant SO_SNDTIMEO_NEW
 #68	constant SO_DETACH_REUSEPORT_BPF
+#69	constant SO_PREFER_BUSY_POLL
+#70	constant SO_BUSY_POLL_BUDGET
+#71	constant SO_NETNS_COOKIE
+#72	constant SO_BUF_LOCK
+#73	constant SO_RESERVE_MEM
+#74	constant SO_TXREHASH
+#75	constant SO_RCVMARK
 
 \ --------===< enums >===---------
 #0	constant SHUT_RD
@@ -247,7 +259,7 @@ s" sys_socket" add-lib
 #2048	constant SOCK_NONBLOCK
 
 \ -------===< structs >===--------
-\ msghdr
+\ struct msghdr
 begin-structure msghdr
 	drop 16 8 +field msghdr-msg_iov
 	drop 24 8 +field msghdr-msg_iovlen
@@ -257,13 +269,13 @@ begin-structure msghdr
 	drop 40 8 +field msghdr-msg_controllen
 	drop 48 4 +field msghdr-msg_flags
 drop 56 end-structure
-\ cmsghdr
+\ struct cmsghdr
 begin-structure cmsghdr
 	drop 0 8 +field cmsghdr-cmsg_len
 	drop 8 4 +field cmsghdr-cmsg_level
 	drop 12 4 +field cmsghdr-cmsg_type
 drop 16 end-structure
-\ linger
+\ struct linger
 begin-structure linger
 	drop 0 4 +field linger-l_onoff
 	drop 4 4 +field linger-l_linger
